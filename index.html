@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pajak</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div style="width: 1000px; height: 700px; background-color: rgba(255,255,255,0.01); backdrop-filter: blur(10px) saturate (180%); border-radius: 10px; padding: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), inset 0 0 20px rgba(255, 255, 255, 0.1); margin: 50px auto; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid rgba(255, 255, 255, 0.15);">
+        <h1 style="text-align: center; color: #e4e6eb;">Kalkulator Pajak</h1>
+
+        <div style="width: 750px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+                <p>Pilih status PTKP Anda:</p>
+                <select id="ptkp">
+                    <option value="" disabled selected hidden>Status PTKP</option>
+                    <option value="TK/0">TK/0 (Rp 54.000.000)</option>
+                    <option value="TK/1">TK/1 (Rp 58.500.000)</option>
+                    <option value="TK/2">TK/2 (Rp 63.000.000)</option>
+                    <option value="TK/3">TK/3 (Rp 67.500.000)</option>
+                    <option value="K/0">K/0 (Rp 58.500.000)</option>
+                    <option value="K/1">K/1 (Rp 63.000.000)</option>
+                    <option value="K/2">K/2 (Rp 67.500.000)</option>
+                    <option value="K/3">K/3 (Rp 72.000.000)</option>
+                    <option value="K/I/0">K/I/0 (Rp 112.500.000)</option>
+                    <option value="K/I/1">K/I/1 (Rp 117.000.000)</option>
+                    <option value="K/I/2">K/I/2 (Rp 121.500.000)</option>
+                    <option value="K/I/3">K/I/3 (Rp 126.000.000)</option>
+                </select>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <p>Masukkan penghasilan bulanan Anda:</p>
+                <input type="text" id="income" class="theinput">
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <p>Masukkan jumlah tunjangan Anda:</p>
+                <input type="text" id="tunjangan" class="theinput">
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <p>Masukkan jumlah bonus Anda:</p>
+                <input type="text" id="bonus" class="theinput">
+            </div>
+        </div>
+        <button onclick="calculateTax()" style="display: block; margin: 20px auto; padding: 10px 20px; font-size: 16px;">Hitung Pajak</button>
+
+        <p id="result" style="text-align: center; font-size: 18px;"></p>
+    </div>
+
+    <script src="mechanism.js"></script>
+</body>
+</html>
