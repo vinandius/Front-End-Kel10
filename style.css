@@ -1,59 +1,145 @@
 body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f4f4f4;
-    background: #242526;
-}
+            height: 100vh;
+            margin: 0 auto;
+            background: #242526;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+        }
 
-p{
-    font-size: 18px;
-    color: #e4e6eb;
-}
+        #home {
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+        }
 
-select{
-    font-size: 15px; 
-    border-radius: 10px 10px 10px 10px; 
-    width: 278px;
-    height: 50px;
-    border-color: rgba(0, 0, 0, 0.4);
-    background-color: rgba(255,255,255,0.4);;   
-}
+        #btncontainer {
+            display: inline-flex; 
+            position: relative;
+        }
+        
+        #butptkp {
+            width: 80px; 
+            height: 40px; 
+            z-index: 2; 
+            background: rgba(110, 111, 112, 0.5); 
+            transition: color 0.3s ease;
+        }
 
-select:focus{
-    outline: none;
-    box-shadow: 0 0 10px #e4e6eb;
-    border-color: #e4e6eb;
-    transition: box-shadow.15s ease, border-color.15s ease;
-}
+        #butpbb {
+            width: 80px; 
+            height: 40px; 
+            z-index: 2; 
+            background: rgba(110, 111, 112, 0.5); 
+            transition: color 0.3s ease;
+        }
 
-input { 
-    width: 272px;
-    height: 50px;
-    margin : 10px 0;
-    font-size: 15px; 
-    text-align: left;
-    border-radius: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.4);
-    border-width: 1.4px;
-    background-color: rgba(255,255,255,0.4);
-}
+        #mainbox {
+            width: 1000px; 
+            height: 700px; 
+            background-color: rgba(255,255,255,0.01); 
+            backdrop-filter: blur(10px) saturate (180%); 
+            border-radius: 10px; 
+            padding: 20px; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), inset 0 0 20px rgba(255, 255, 255, 0.1); 
+            border: 1px solid rgba(255, 255, 255, 0.15); 
+            position: relative;
+        }
 
-input:focus{
-    outline: none;
-    box-shadow: 0 0 10px #e4e6eb;
-    border: 1px solid #e4e6eb;
-    transition: box-shadow.15s ease, border-color.15s ease;
-}
+        #containerpajak {
+            display: flex;
+        }
 
-button{
-    display: block; 
-    margin: 20px auto; 
-    padding: 10px 20px; 
-    font-size: 15px;
-    background-color: rgba(255,255,255,0.4);
-    border-radius: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.4)
-}
+        .form {
+            width: 700px;
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+        }
+
+        #boxptkp, #boxpbb {
+            position: absolute; 
+            min-height: 320px;
+            min-width: 700px;
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%);
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.7s ease-in-out, visibility 0.7s ease-in-out;
+        }
+
+        p{
+            font-size: 18px;
+            color: #e4e6eb;
+        }
+
+        select{
+            font-size: 15px; 
+            border-radius: 10px 10px 10px 10px; 
+            width: 278px;
+            height: 50px;
+            border-color: rgba(0, 0, 0, 0.4);
+            background-color: rgba(255,255,255,0.4);
+        }
+
+        select:focus{
+            outline: none;
+            box-shadow: 0 0 10px #e4e6eb;
+            border-color: #e4e6eb;
+            transition: box-shadow 0.15s ease, border-color 0.15s ease;
+        }
+
+        input { 
+            width: 272px;
+            height: 50px;
+            margin : 10px 0;
+            font-size: 15px; 
+            text-align: left;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 0, 0, 0.4);
+            border-width: 1.4px;
+            background-color: rgba(255,255,255,0.4);
+        }
+
+        input:focus{
+            outline: none;
+            box-shadow: 0 0 10px #e4e6eb;
+            border: 1px solid #e4e6eb;
+            transition: box-shadow 0.15s ease, border-color 0.15s ease;
+        }
+
+        #result {
+            text-align: center; 
+            font-size: 18px;
+        }
+
+        button{
+            display: block; 
+            margin: 20px auto; 
+            padding: 10px 20px; 
+            font-size: 16px;
+            background-color: rgba(255,255,255,0.4);
+            border-radius: 10px;
+            border: 1px solid rgba(0, 0, 0, 0.4)
+        }
+
+        #butptkp {
+            border-radius: 10px 0 0 10px;
+        }
+
+        #butpbb {
+            border-radius: 0 10px 10px 0;
+        }
+
+        #slider {
+            background: #4169E1;
+            width: 80px; 
+            height: 40px; 
+            z-index: 1; 
+            position: absolute; 
+            top: 20px; left: 0; 
+            border-radius: 0; 
+            opacity: 0;
+        }

@@ -1,3 +1,46 @@
+const butptkp = document.getElementById('butptkp');
+const butpbb = document.getElementById('butpbb');
+let boxptkp = document.getElementById('boxptkp');
+let boxpbb = document.getElementById('boxpbb');
+
+let slider = document.getElementById('slider');
+let showingSlider = false;
+
+function showSlider(i) {
+    if(!showingSlider) {
+        slider.style.transition = 'none';
+        slider.style.transform = `translateX(${i}px)`;
+        slider.offsetHeight;
+        slider.style.transition = 'transform 0.7s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.7s ease';
+        slider.style.opacity = '1';
+        showingSlider = true;
+    }
+    else {
+        slider.style.transform = `translateX(${i}px)`;
+    }
+}
+
+butptkp.addEventListener('click', function() {
+    boxpbb.style.visibility = 'hidden';
+    boxpbb.style.opacity = '0';
+
+    boxptkp.style.visibility = 'visible';
+    boxptkp.style.opacity = '1';
+
+    slider.style.borderRadius ='10px 0 0 10px';
+    showSlider(0);
+})
+
+butpbb.addEventListener('click', function() {
+    boxptkp.style.visibility = 'hidden';
+    boxptkp.style.opacity = '0';
+    boxpbb.style.visibility = 'visible';
+    boxpbb.style.opacity = '1';
+    slider.style.borderRadius = '0 10px 10px 0';
+    showSlider(80);
+})
+
+
 function calculateTax(){
     const ptkp = document.getElementById('ptkp').value;
     const income = document.getElementById('income').value;
@@ -5,12 +48,12 @@ function calculateTax(){
     const bonus = document.getElementById('bonus').value;
     const bruto = (parseFloat(income) + parseFloat(tunjangan) + parseFloat(bonus)) * 12;
     const iuran = bruto * 0.02;
-    const bpjs = bruto * 0.02;
     let biayaJabatan = bruto * 0.05;
     if (biayaJabatan > 6000000) {
         biayaJabatan = 500000;
     }
-    const neto = bruto - biayaJabatan;
+
+    const neto = bruto - (biayaJabatan + iuran);
     let pkp = 0;
         if (ptkp == "TK/0"){
             pkp = neto - 54000000;
