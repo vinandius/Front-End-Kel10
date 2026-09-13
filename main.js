@@ -123,4 +123,6 @@ function calculatePPh(){
     document.getElementById('result').innerText = "Pajak yang harus dibayar: Rp " + formangka.format(pph) + " dalam setahun";
 }
 
-function calculatePBB() {}
+function calculatePBB() {
+    
+}
