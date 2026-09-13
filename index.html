@@ -26,96 +26,107 @@
     <!-- div mainbox untuk halaman utama -->
     <div id="mainbox">
         <!-- div container pajak untuk mengumpulkan box ptkp dan box pbb menjadi satu -->
-            <div id="containerpajak">
-                <!-- div box ptkp untuk mencakup isi yang dibutuhkan untuk perhitungan pajak penghasilan -->
-                <div id="boxpph">
-                    <!-- div class form untuk menjaga teks dan input field berada dalam satu baris -->
-                    <div class="form">
-                        <p>Pilih status PTKP Anda: 
-                            <a href="Photos/Kategori PTKP.jpg" target="_blank" style="font-size: 12px; color: #8ca7f8;">(Lihat Tabel PTKP)</a>
-                        </p>
-                        <!-- select ptkp untuk digunakan dalam javascript -->
-                        <select id="ptkp" class="theinput">
-                            <option value="" disabled selected hidden>Status PTKP</option>
-                            <option value="TK/0">TK/0 (Rp 54.000.000)</option>
-                            <option value="TK/1">TK/1 (Rp 58.500.000)</option>
-                            <option value="TK/2">TK/2 (Rp 63.000.000)</option>
-                            <option value="TK/3">TK/3 (Rp 67.500.000)</option>
-                            <option value="K/0">K/0 (Rp 58.500.000)</option>
-                            <option value="K/1">K/1 (Rp 63.000.000)</option>
-                            <option value="K/2">K/2 (Rp 67.500.000)</option>
-                            <option value="K/3">K/3 (Rp 72.000.000)</option>
-                            <option value="K/I/0">K/I/0 (Rp 112.500.000)</option>
-                            <option value="K/I/1">K/I/1 (Rp 117.000.000)</option>
-                            <option value="K/I/2">K/I/2 (Rp 121.500.000)</option>
-                            <option value="K/I/3">K/I/3 (Rp 126.000.000)</option>
-                        </select>
-                    </div>    
+        <div id="containerpajak">
+            
+            <!-- BOX PPH -->
+            <div id="boxpph">
+                <div class="form">
+                    <p>Pilih status PTKP Anda: 
+                        <a href="Photos/Kategori PTKP.jpg" target="_blank" style="font-size: 12px; color: #8ca7f8;">(Lihat Tabel PTKP)</a>
+                    </p>
+                    
+                    <select id="ptkp" class="theinput">
+                        <option value="" disabled selected hidden>Status PTKP</option>
+                        <option value="TK/0">TK/0 (Rp 54.000.000)</option>
+                        <option value="TK/1">TK/1 (Rp 58.500.000)</option>
+                        <option value="TK/2">TK/2 (Rp 63.000.000)</option>
+                        <option value="TK/3">TK/3 (Rp 67.500.000)</option>
+                        <option value="K/0">K/0 (Rp 58.500.000)</option>
+                        <option value="K/1">K/1 (Rp 63.000.000)</option>
+                        <option value="K/2">K/2 (Rp 67.500.000)</option>
+                        <option value="K/3">K/3 (Rp 72.000.000)</option>
+                        <option value="K/I/0">K/I/0 (Rp 112.500.000)</option>
+                        <option value="K/I/1">K/I/1 (Rp 117.000.000)</option>
+                        <option value="K/I/2">K/I/2 (Rp 121.500.000)</option>
+                        <option value="K/I/3">K/I/3 (Rp 126.000.000)</option>
+                    </select>
+                </div>    
 
-                    <div class="form">
-                        <p>Masukkan penghasilan bulanan Anda:</p>
-                        <div style="display: flex; align-items:center;">
-                            <span style="font-weight: bold; margin-right: 8px; color: #e4e6eb;">Rp</span>
-                            <input type="text" inputmode="numeric" placeholder="5000000" id="income" class="theinput">
-                        </div>
+                <div class="form">
+                    <p>Masukkan penghasilan bulanan Anda:</p>
+                    <div style="position: relative;">
+                        <span style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); font-weight: bold; color: #e4e6eb; pointer-events: none;">Rp</span>
+                        <input type="text" inputmode="numeric" placeholder="5000000" id="income" class="theinput" style="padding-left: 36px;">
                     </div>
-
-                    <div class="form">
-                        <p>Masukkan jumlah tunjangan Anda:</p>
-                        <div style="display: flex; align-items:center;">
-                            <span style="font-weight: bold; margin-right: 8px; color: #e4e6eb;">Rp</span>
-                            <input type="text" inputmode="numeric" placeholder="1000000" id="tunjangan" class="theinput">
-                        </div>
-                    </div>
-
-                    <div class="form">
-                        <p>Masukkan jumlah bonus Anda:</p>
-                        <div style="display: flex; align-items:center;">
-                            <span style="font-weight: bold; margin-right: 8px; color: #e4e6eb;">Rp</span>
-                        <input type="text" inputmode="numeric" placeholder="500000" id="bonus" class="theinput">
-                        </div>
-                    </div>
-                    <br>
-                    <button class="btn-hitung" onclick="calculatePPh()">Hitung Pajak</button>
                 </div>
 
-                <!-- div box pbb untuk mencakup isi yang dibutuhkan untuk perhitungan pajak bumi dan bangunan -->
-                <div id="boxpbb">
-                    <div class="form">
-                        <p>Pilih jenis PBB anda:</p>
-
-                        <!-- statpbb untuk digunakan dalam javascrip -->
-                        <select id="statpbb" class="theinput">
-                            <option value="" disabled selected hidden>Jenis PBB</option>
-                            <option value="p2">PBB P2</option>
-                            <option value="p5l">PBB P5L</option>
-                        </select>
+                <div class="form">
+                    <p>Masukkan jumlah tunjangan Anda:</p>
+                    <div style="position: relative;">
+                        <span style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); font-weight: bold; color: #e4e6eb; pointer-events: none;">Rp</span>
+                        <input type="text" inputmode="numeric" placeholder="1000000" id="tunjangan" class="theinput" style="padding-left: 36px;">
                     </div>
-                    
-                    <div class="form">
-                        <p>Masukkan nilai NJOP:</p>
-                        <input type="text" id="NJOP" class="theinput">
-                    </div>
-                    
-                    <div class="form">
-                        <p>Masukkan nilai NJOPTKP:</p>
-                        <input type="text" id="NJOPTKP" class="theinput">
-                    </div>
-
-                    <div class="form">
-                        <p>Masukkan nilai Tarif NJKP(khusus p5l):</p>
-                        <input type="text" id="NJKP" class ="theinput">
-                    </div>
-
-                    <div class="form">
-                        <p>Masukkan nilai Tarif PBB:</p>
-                        <input type="text" id="PBB" class="theinput">
-                    </div>
-
-                    <button onclick="calculatePBB()">Hitung Pajak</button>
                 </div>
-        </div>
 
+                <div class="form">
+                    <p>Masukkan jumlah bonus Anda:</p>
+                    <div style="position: relative;">
+                        <span style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); font-weight: bold; color: #e4e6eb; pointer-events: none;">Rp</span>
+                        <input type="text" inputmode="numeric" placeholder="500000" id="bonus" class="theinput" style="padding-left: 36px;">
+                    </div>
+                </div>
+                <br>
+                <button class="btn-hitung" onclick="calculatePPh()">Hitung Pajak</button>
+            </div>
+
+            <!-- BOX PBB -->
+            <div id="boxpbb">
+                <div class="form">
+                    <p>Pilih jenis PBB anda:
+                        <a href="Photos/Perbedaan Jenis PBB.jpg" target="_blank" style="font-size: 12px; color: #8ca7f8;">(Ketahui Perbedaan Jenis PBB Anda)</a>
+                    </p>
+                    <select id="statpbb" class="theinput">
+                        <option value="" disabled selected hidden>Jenis PBB</option>
+                        <option value="p2">PBB P2</option>
+                        <option value="p3">PBB P3</option>
+                    </select>
+                </div>
+                
+                <div class="form">
+                    <p>Masukkan nilai NJOP: <small>(Total Bumi dan Bangunan Jika P2)</small></p>
+                    <div style="position: relative;">
+                        <span style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); font-weight: bold; color: #e4e6eb; pointer-events: none;">Rp</span>
+                        <input type="text" inputmode="numeric" placeholder="1000000000" id="NJOP" class="theinput" style="padding-left: 36px;">
+                    </div>
+                </div>
+                
+                <div class="form">
+                    <p>Masukkan nilai NJOPTKP:</p>
+                    <div style="position: relative;">
+                        <span style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); font-weight: bold; color: #e4e6eb; pointer-events: none;">Rp</span>
+                        <input type="text" inputmode="numeric" placeholder="12000000" id="NJOPTKP" class="theinput" style="padding-left: 36px;">
+                    </div>
+                </div>
+
+                <div class="form">
+                    <p>Masukkan nilai Tarif NJKP(khusus p5l):</p>
+                    <div style="position: relative;">
+                        <input type="text" inputmode="numeric" placeholder="20" id="NJKP" class="theinput" style="padding-right: 32px;">
+                        <span style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); font-weight: bold; color: #e4e6eb; pointer-events: none;">%</span>
+                    </div>
+                </div>
+
+                <div class="form">
+                    <p>Masukkan nilai Tarif PBB:</p>
+                    <div style="position: relative;">
+                        <input type="text" inputmode="numeric" placeholder="0.5" id="PBB" class="theinput" style="padding-right: 32px;">
+                        <span style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); font-weight: bold; color: #e4e6eb; pointer-events: none;">%</span>
+                    </div>
+                </div>
+                <br>
+                <button class="btn-hitung" onclick="calculatePBB()">Hitung Pajak</button>
+            </div>
+        </div>  
         <!-- result untuk menampilkan hasil perhitungan -->
         <p id="result"></p>
     </div>

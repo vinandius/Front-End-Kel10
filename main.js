@@ -92,9 +92,11 @@ function calculatePPh(){
     let pkp = neto - nilaiPTKP[ptkp];
     if (pkp < 0) pkp = 0;
     
+    // Perhitungan pajak secara progresif berdasarkan lapisan penghasilan kena pajak (PKP)
     let sisaPKP = pkp;
     let pph = 0;
 
+    // Lapisan 5 (35%)
     if (sisaPKP > 5000000000) {
         pph += (sisaPKP - 5000000000) * 0.35;
         sisaPKP = 5000000000;
@@ -124,5 +126,46 @@ function calculatePPh(){
 }
 
 function calculatePBB() {
-    
+    const statpbb = document.getElementById('statpbb').value;
+    const njop = parseFloat(document.getElementById('NJOP').value);
+    const njoptkp = parseFloat(document.getElementById('NJOPTKP').value);
+    const njkp = parseFloat(document.getElementById('NJKP').value);
+    const tarifPbb = parseFloat(document.getElementById('PBB').value);
+
+    // Pemeriksaan Input agar tidak terjadi error saat perhitungan, 
+    // misalnya jika pengguna tidak memasukkan nilai atau memasukkan nilai yang tidak valid.
+    if (statpbb === "") {
+        alert("Gagal: Silakan pilih jenis PBB terlebih dahulu!");
+        return;
+    }
+
+    if (isNaN(njop) || njop < 0 || isNaN(njoptkp) || njoptkp < 0 || isNaN(tarifPbb) || tarifPbb < 0) {
+        document.getElementById('result').innerText = "Silakan masukkan angka NJOP, NJOPTKP, dan Tarif PBB yang valid.";
+        return;
+    }
+
+    if (statpbb === "p3" && (isNaN(njkp) || njkp < 0)) {
+        document.getElementById('result').innerText = "Untuk PBB P3, nilai Tarif NJKP wajib diisi dengan angka valid.";
+        return;
+    }
+
+    // Perhitungan dasar pengenaan pajak bumi dan bangunan (PBB)
+    let dasarPengenaan = njop - njoptkp;
+
+    if (dasarPengenaan < 0) {
+        dasarPengenaan = 0; 
+    }
+
+    let hasilPBB = 0;
+
+    if (statpbb === "p2") {
+        hasilPBB = dasarPengenaan * (tarifPbb / 100);
+        
+    } else if (statpbb === "p3") {
+        hasilPBB = dasarPengenaan * (njkp / 100) * (tarifPbb / 100);
+    }
+
+    // Menampilkan hasil perhitungan pajak bumi dan bangunan (PBB) dalam format mata uang Indonesia
+    let formangka = new Intl.NumberFormat('id-ID');
+    document.getElementById('result').innerText = "Pajak Bumi dan Bangunan: Rp " + formangka.format(hasilPBB) + " / tahun";
 }
