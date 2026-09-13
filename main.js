@@ -20,6 +20,15 @@ function showSlider(i) {
     }
 }
 
+boxpbb.style.visibility = 'hidden';
+boxpbb.style.opacity = '0';
+boxpph.style.visibility = 'visible';
+boxpph.style.opacity = '1';
+slider.style.borderRadius = '10px 0 0 10px';
+butpph.style.color = '#ffffff';
+butpbb.style.color = '#475569';
+showSlider(0);
+
 butpph.addEventListener('click', function() {
     boxpbb.style.visibility = 'hidden';
     boxpbb.style.opacity = '0';
@@ -28,16 +37,20 @@ butpph.addEventListener('click', function() {
     boxpph.style.opacity = '1';
 
     slider.style.borderRadius ='10px 0 0 10px';
+    butpph.style.color = '#ffffff';
+    butpbb.style.color = '#475569';
     showSlider(0);
 })
 
 butpbb.addEventListener('click', function() {
-    boxpbb.style.visibility = 'hidden';
-    boxpbb.style.opacity = '0';
+    boxpph.style.visibility = 'hidden';
+    boxpph.style.opacity = '0';
     boxpbb.style.visibility = 'visible';
     boxpbb.style.opacity = '1';
     slider.style.borderRadius = '0 10px 10px 0';
-    showSlider(80);
+    butpbb.style.color = '#ffffff';
+    butpph.style.color = '#475569';
+    showSlider(300);
 })
 
 function calculatePPh(){

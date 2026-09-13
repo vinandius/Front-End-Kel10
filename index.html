@@ -5,14 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pajak</title>
-    <link rel="stylesheet" href="styleSheet.css">
-    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1 id="title" style="text-align: center; color: #e4e6eb;">Kalkulator Pajak</h1>    
-
+    <nav class="navbar">
+        <img src="logo.png" class="logo" alt="Logo">
+    </nav>
+        
+    <!-- Tombol jenis pajak -->
     <div id="home">
-        <p style="margin-right: 15px;">Jenis Pajak</p>
+        <p style="margin-right: 15px; color: #000;">Jenis Pajak</p>
 
         <div id="btncontainer">
             <div id="slider"></div>
@@ -30,10 +32,10 @@
                     <!-- div class form untuk menjaga teks dan input field berada dalam satu baris -->
                     <div class="form">
                         <p>Pilih status PTKP Anda: 
-                            <a href="Kategori PTKP.jpg" target="_blank" style="font-size: 12px; color: blue;">(Lihat Tabel PTKP)</a>
+                            <a href="Kategori PTKP.jpg" target="_blank" style="font-size: 12px; color: #8ca7f8;">(Lihat Tabel PTKP)</a>
                         </p>
                         <!-- select ptkp untuk digunakan dalam javascript -->
-                        <select id="ptkp">
+                        <select id="ptkp" class="theinput">
                             <option value="" disabled selected hidden>Status PTKP</option>
                             <option value="TK/0">TK/0 (Rp 54.000.000)</option>
                             <option value="TK/1">TK/1 (Rp 58.500.000)</option>
@@ -52,24 +54,29 @@
 
                     <div class="form">
                         <p>Masukkan penghasilan bulanan Anda:</p>
-                        <span>Rp</span>
-                        <input type="text" inputmode="numeric" placeholder="5000000" id="income" class="theinput">
+                        <div style="display: flex; align-items:center;">
+                            <span style="font-weight: bold; margin-right: 8px; color: #e4e6eb;">Rp</span>
+                            <input type="text" inputmode="numeric" placeholder="5000000" id="income" class="theinput">
+                        </div>
                     </div>
 
                     <div class="form">
                         <p>Masukkan jumlah tunjangan Anda:</p>
-                        <span>Rp</span>
-                        <input type="text" inputmode="numeric" placeholder="1000000" id="tunjangan" class="theinput">
+                        <div style="display: flex; align-items:center;">
+                            <span style="font-weight: bold; margin-right: 8px; color: #e4e6eb;">Rp</span>
+                            <input type="text" inputmode="numeric" placeholder="1000000" id="tunjangan" class="theinput">
+                        </div>
                     </div>
 
                     <div class="form">
                         <p>Masukkan jumlah bonus Anda:</p>
-                        <span>Rp</span>
+                        <div style="display: flex; align-items:center;">
+                            <span style="font-weight: bold; margin-right: 8px; color: #e4e6eb;">Rp</span>
                         <input type="text" inputmode="numeric" placeholder="500000" id="bonus" class="theinput">
-                        
+                        </div>
                     </div>
                     <br>
-                    <button onclick="calculatePPh()">Hitung Pajak</button>
+                    <button class="btn-hitung" onclick="calculatePPh()">Hitung Pajak</button>
                 </div>
 
                 <!-- div box pbb untuk mencakup isi yang dibutuhkan untuk perhitungan pajak bumi dan bangunan -->
@@ -78,7 +85,7 @@
                         <p>Pilih jenis PBB anda:</p>
 
                         <!-- statpbb untuk digunakan dalam javascrip -->
-                        <select id="statpbb">
+                        <select id="statpbb" class="theinput">
                             <option value="" disabled selected hidden>Jenis PBB</option>
                             <option value="p2">PBB P2</option>
                             <option value="p5l">PBB P5L</option>
@@ -112,5 +119,7 @@
         <!-- result untuk menampilkan hasil perhitungan -->
         <p id="result"></p>
     </div>
+
+    <script src="main.js"></script>
 </body>
 </html>
