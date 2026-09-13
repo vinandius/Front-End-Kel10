@@ -5,13 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pajak</title>
-    <link rel="stylesheet" href="StyleTax.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1 style="text-align: center; color: #e4e6eb;">Kalkulator Pajak</h1>    
-
+    <nav class="navbar">
+        <img src="logo.png" class="logo">
+    </nav>
+        
+    <!-- Tombol jenis pajak -->
     <div id="home">
-        <p style="margin-right: 15px;">Jenis Pajak</p>
+        <p style="margin-right: 15px; color: #000;">Jenis Pajak</p>
 
         <div id="btncontainer">
             <div id="slider"></div>
@@ -30,7 +33,7 @@
                     <div class="form">
                         <p>Pilih status PTKP Anda:</p>
                         <!-- select ptkp untuk digunakan dalam javascript -->
-                        <select id="ptkp">
+                        <select id="ptkp" class="theinput">
                             <option value="" disabled selected hidden>Status PTKP</option>
                             <option value="TK/0">TK/0 (Rp 54.000.000)</option>
                             <option value="TK/1">TK/1 (Rp 58.500.000)</option>
@@ -70,7 +73,7 @@
                         <p>Pilih jenis PBB anda:</p>
 
                         <!-- statpbb untuk digunakan dalam javascrip -->
-                        <select value="statpbb">
+                        <select value="statpbb" class="theinput">
                             <option value="" disabled selected hidden>Jenis PBB</option>
                             <option value="p2">PBB P2</option>
                             <option value="p5l">PBB P5L</option>
@@ -94,7 +97,7 @@
 
                     <div class="form">
                         <p>Masukkan nilai Tarif PBB:</p>
-                        <input type="text" id=""tarifPBB class="theinput">
+                        <input type="text" id="tarifPBB" class="theinput">
                     </div>
 
                     <button onclick="">Hitung Pajak</button>
@@ -105,6 +108,6 @@
         <p id="result"></p>
     </div>
 
-    <script src="Tax.js"></script>
+    <script src="mechanisms.js"></script>
 </body>
 </html>
