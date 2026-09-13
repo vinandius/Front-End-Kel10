@@ -1,6 +1,8 @@
 body {
     height: 100vh;
     margin: 0 auto;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:#2c3e50;
     background-color: #ffffff;
     background-image: url('background.jpg');
     background-size: cover;
@@ -53,16 +55,24 @@ body {
     position: relative;
     border-radius: 10px;
     padding: 0;
+    background: rgba(110, 111, 112, 0.2);
 }
 
-#butptkp, #butpbb {
-    width: 80px;
-    height: 40px;
+#butpph, #butpbb {
+    width: 300px;
+    height: 45px;
+    margin: 0;
+    padding: 0;
+    position: relative;
     z-index: 2;
     border: none;
-    background: rgba(110, 111, 112, 0.5);
+    background: transparent;
     transition: color 0.3s ease;
     cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    color: #0b1a36;
+    white-space: nowrap;
 }
 
 #mainbox {
@@ -90,13 +100,12 @@ body {
     margin-bottom: 5px;
 }
 
-#boxptkp, #boxpbb {
+#boxpph, #boxpbb {
     position: absolute;
-    min-height: 320px;
-    min-width: 700px;
-    top: 50%;
+    top: 30px;
     left: 50%;
-    transform: translate(-50%, -50%);
+    width: 700px;
+    transform: translateX(-50%);
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.7s ease-in-out, visibility 0.7s ease-in-out;
@@ -147,7 +156,7 @@ button {
     cursor: pointer;
 }
 
-#butptkp {
+#butpph {
     border-radius: 10px 0 0 10px;
 }
 
@@ -157,11 +166,11 @@ button {
 
 #slider {
     background: #8ca7f8;
-    width: 80px;
-    height: 40px;
+    width: 300px;
+    height: 45px;
     z-index: 1;
     position: absolute;
-    top: 20px;
+    top: 0;
     left: 0;
     border-radius: 0;
     opacity: 0;
