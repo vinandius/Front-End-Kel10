@@ -54,6 +54,8 @@ body {
 
 #btncontainer1 {
     display: inline-flex;
+    width: 100%;
+    max-width: 600px;
     position: relative;
     border-radius: 10px;
     padding: 0;
@@ -93,6 +95,7 @@ body {
 }
 
 #butpph, #butpbb {
+    flex: 1;
     width: 300px;
     height: 45px;
     margin: 0;
@@ -107,11 +110,14 @@ body {
     font-weight: bold;
     color: #0b1a36;
     white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 #mainbox {
-    width: 750px;
-    height: 450px;
+    width: 100%;
+    max-width: 750px;
+    min-height: 450px;
+    height: auto;
     background-color: rgb(36, 48, 71);
     backdrop-filter: blur(10px) saturate (180%);
     border-radius: 7px;
@@ -127,7 +133,8 @@ body {
 }
 
 .form {
-    width: 700px;
+    width: 100%;
+    max-width: 700px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -138,7 +145,8 @@ body {
     position: absolute;
     top: 20px;
     left: 50%;
-    width: 670px;
+    width: 90%;
+    max-width: 670px;
     height: calc(100% - 40px);
     transform: translateX(-50%);
     display: flex;
@@ -204,7 +212,7 @@ button {
 
 #slider {
     background: #8ca7f8;
-    width: 300px;
+    width: 50%;
     height: 45px;
     z-index: 1;
     position: absolute;
