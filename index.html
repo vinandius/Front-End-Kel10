@@ -15,8 +15,9 @@
     <!-- Tombol jenis pajak -->
     <div id="text" oncontextmenu="return false;">
         <p style="margin-right: 15px; color: #000;">Jenis Pajak</p>
-
-        <div id="btncontainer1">
+        
+        <!-- fixed : sliders can no longer be copied, ruining the aesthetics -->
+         <div id="btncontainer1" class="noSelect">
             <div id="slider"></div>
             <button id="butpph">Pajak Penghasilan (PPh)</button>
             <button id="butpbb">Pajak Bumi dan Bangunan (PBB)</button>
@@ -74,13 +75,12 @@
                         <span style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); font-weight: bold; color: #e4e6eb; pointer-events: none;">Rp</span>
                         <input type="text" inputmode="numeric" placeholder="500000" id="bonus" class="theinput" style="padding-left: 36px;">
                     </div>
-                    <br>
-                    <button id="btncontainer2" class="btn-hitung" onclick="calculatePPh();  document.getElementById('pajakModal').style.display='block'">
-                        Hitung Pajak
-                    </button>
                 </div>
-                <br>
-                <button class="btn-hitung" onclick="calculatePPh()">Hitung Pajak</button>
+
+                <!-- fixed : duped removed -->
+                <button id="btncontainer2" class="btn-hitung" onclick="calculatePPh(); document.getElementById('pajakModal').style.display='block'">
+                    Hitung Pajak
+                </button>
             </div>
 
             <!-- BOX PBB -->
@@ -126,9 +126,10 @@
                         <input type="text" inputmode="numeric" placeholder="0.5" id="PBB" class="theinput" style="padding-right: 32px;">
                         <span style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); font-weight: bold; color: #e4e6eb; pointer-events: none;">%</span>
                     </div>
-
-                    <button id="btncontainer2" onclick="calculatePBB(); document.getElementById('pajakModal').style.display='block'">Hitung Pajak</button>
                 </div>
+            <button id="btncontainer2" class="btn-hitung" onclick="calculatePBB(); document.getElementById('pajakModal').style.display='block'">
+                Hitung Pajak
+            </button>
         </div>
 
         <div id="pajakModal" class="modal">

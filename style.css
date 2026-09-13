@@ -58,6 +58,20 @@ body {
     background: rgba(110, 111, 112, 0.2);
 }
 
+#btncontainer2 {
+    display: block;
+    margin: 20px auto 0 auto;
+    padding: 12px 28px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #0b1a36;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
 #btncontainer2:hover {
     padding: 12px 28px;
     background-color: #030d57;
@@ -120,10 +134,14 @@ body {
 
 #boxpph, #boxpbb {
     position: absolute;
-    top: 30px;
+    top: 20px;
     left: 50%;
-    width: 700px;
+    width: 670px;
+    height: calc(100% - 40px);
     transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.7s ease-in-out, visibility 0.7s ease-in-out;
