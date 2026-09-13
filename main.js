@@ -20,15 +20,6 @@ function showSlider(i) {
     }
 }
 
-boxpbb.style.visibility = 'hidden';
-boxpbb.style.opacity = '0';
-boxpph.style.visibility = 'visible';
-boxpph.style.opacity = '1';
-slider.style.borderRadius = '10px 0 0 10px';
-butpph.style.color = '#ffffff';
-butpbb.style.color = '#475569';
-showSlider(0);
-
 butpph.addEventListener('click', function() {
     boxpbb.style.visibility = 'hidden';
     boxpbb.style.opacity = '0';
