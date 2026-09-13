@@ -13,15 +13,15 @@
     </nav>
         
     <!-- Tombol jenis pajak -->
-    <div id="home">
+    <div id="text" oncontextmenu="return false;">
         <p style="margin-right: 15px; color: #000;">Jenis Pajak</p>
 
-        <div id="btncontainer">
+        <div id="btncontainer1">
             <div id="slider"></div>
             <button id="butpph">Pajak Penghasilan (PPh)</button>
             <button id="butpbb">Pajak Bumi dan Bangunan (PBB)</button>
         </div>
-    </div> 
+    </div>
 
     <!-- div mainbox untuk halaman utama -->
     <div id="mainbox">
@@ -76,7 +76,9 @@
                         </div>
                     </div>
                     <br>
-                    <button class="btn-hitung" onclick="calculatePPh()">Hitung Pajak</button>
+                    <button id="btncontainer2" class="btn-hitung" onclick="calculatePPh();  document.getElementById('pajakModal').style.display='block'">
+                        Hitung Pajak
+                    </button>
                 </div>
 
                 <!-- div box pbb untuk mencakup isi yang dibutuhkan untuk perhitungan pajak bumi dan bangunan -->
@@ -112,12 +114,20 @@
                         <input type="text" id="PBB" class="theinput">
                     </div>
 
-                    <button onclick="calculatePBB()">Hitung Pajak</button>
+                    <button id="btncontainer2" onclick="calculatePBB(); document.getElementById('pajakModal').style.display='block'">Hitung Pajak</button>
                 </div>
         </div>
 
-        <!-- result untuk menampilkan hasil perhitungan -->
-        <p id="result"></p>
+        <div id="pajakModal" class="modal">
+            <div class="modal-content">
+
+            <!-- Tombol X  -->
+            <span class="closebtn" onclick="document.getElementById('pajakModal').style.display='none'">&times;</span>
+            <h3 style="color: #1c1d5e; margin-bottom: 15px;">Hasil Perhitungan</h3>
+
+            <!-- result untuk menampilkan hasil perhitungan -->
+            <p id="result"></p>
+        </div>
     </div>
 
     <script src="main.js"></script>
