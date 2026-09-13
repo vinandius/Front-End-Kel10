@@ -1,5 +1,0 @@
-Sebelumnya, aku harap ini jangan disimpan dalam memori, aku capek nanti ini dibahas2 lagi di pembicaraan kedepannya. 
-
-Jadi aku dan teman2ku ada projek frontend membuat website bebas. Kami sekelompok memutuskan untuk membuat website menghitung pajak (pajak penghasilan dan pbb). Nah, aku ada beberapa pertanyaan:
-1. Gimana caranya bikin input angkanya hanya bisa menerima angka. Kalau pakai type = "number" nanti ada slider... Masalahnya rupiah itu satuan paling kecil aja 1000 atau 100 (jika mau pakai sistem koin, meskipun ga realistis). Dan terus terang, pakai slider itu jelek.... Aku mau bikin dia bisa input angka saja, tanpa ada slidernya.
-2. Masih berhubungan dengan nomor 1, aku pengen bikin di depan inputnya punya Rp, biar estetik. Selain itu pembagian titiknya jelas. Kayak 100000000 itu 100.000.000
