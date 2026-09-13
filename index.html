@@ -5,18 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pajak</title>
-    <link rel="stylesheet" href="StyleTax.css">
+    <link rel="stylesheet" href="styleSheet.css">
+    <script src="main.js" defer></script>
 </head>
 <body>
-    <h1 style="text-align: center; color: #e4e6eb;">Kalkulator Pajak</h1>    
+    <h1 id="title" style="text-align: center; color: #e4e6eb;">Kalkulator Pajak</h1>    
 
     <div id="home">
         <p style="margin-right: 15px;">Jenis Pajak</p>
 
         <div id="btncontainer">
             <div id="slider"></div>
-            <button id="butptkp">PTKP</button>
-            <button id="butpbb">PBB</button>
+            <button id="butpph">Pajak Penghasilan (PPh)</button>
+            <button id="butpbb">Pajak Bumi dan Bangunan (PBB)</button>
         </div>
     </div> 
 
@@ -24,11 +25,13 @@
     <div id="mainbox">
         <!-- div container pajak untuk mengumpulkan box ptkp dan box pbb menjadi satu -->
             <div id="containerpajak">
-                <!-- div box ptkp untuk mencakup isi yang dibutuhkan untuk perhitungan pajak ptkp -->
-                <div id="boxptkp">
+                <!-- div box ptkp untuk mencakup isi yang dibutuhkan untuk perhitungan pajak penghasilan -->
+                <div id="boxpph">
                     <!-- div class form untuk menjaga teks dan input field berada dalam satu baris -->
                     <div class="form">
-                        <p>Pilih status PTKP Anda:</p>
+                        <p>Pilih status PTKP Anda: 
+                            <a href="Kategori PTKP.jpg" target="_blank" style="font-size: 12px; color: blue;">(Lihat Tabel PTKP)</a>
+                        </p>
                         <!-- select ptkp untuk digunakan dalam javascript -->
                         <select id="ptkp">
                             <option value="" disabled selected hidden>Status PTKP</option>
@@ -49,19 +52,24 @@
 
                     <div class="form">
                         <p>Masukkan penghasilan bulanan Anda:</p>
-                        <input type="text" id="income" class="theinput">
+                        <span>Rp</span>
+                        <input type="text" inputmode="numeric" placeholder="5000000" id="income" class="theinput">
                     </div>
 
                     <div class="form">
                         <p>Masukkan jumlah tunjangan Anda:</p>
-                        <input type="text" id="tunjangan" class="theinput">
+                        <span>Rp</span>
+                        <input type="text" inputmode="numeric" placeholder="1000000" id="tunjangan" class="theinput">
                     </div>
 
                     <div class="form">
                         <p>Masukkan jumlah bonus Anda:</p>
-                        <input type="text" id="bonus" class="theinput">
+                        <span>Rp</span>
+                        <input type="text" inputmode="numeric" placeholder="500000" id="bonus" class="theinput">
+                        
                     </div>
-                    <button onclick="calculateTax()">Hitung Pajak</button>
+                    <br>
+                    <button onclick="calculatePPh()">Hitung Pajak</button>
                 </div>
 
                 <!-- div box pbb untuk mencakup isi yang dibutuhkan untuk perhitungan pajak bumi dan bangunan -->
@@ -70,7 +78,7 @@
                         <p>Pilih jenis PBB anda:</p>
 
                         <!-- statpbb untuk digunakan dalam javascrip -->
-                        <select value="statpbb">
+                        <select id="statpbb">
                             <option value="" disabled selected hidden>Jenis PBB</option>
                             <option value="p2">PBB P2</option>
                             <option value="p5l">PBB P5L</option>
@@ -79,7 +87,7 @@
                     
                     <div class="form">
                         <p>Masukkan nilai NJOP:</p>
-                        <input type="text" id="NJKP" class="theinput">
+                        <input type="text" id="NJOP" class="theinput">
                     </div>
                     
                     <div class="form">
@@ -89,22 +97,20 @@
 
                     <div class="form">
                         <p>Masukkan nilai Tarif NJKP(khusus p5l):</p>
-                        <input type="text" id="tarifNJKP" class ="theinput">
+                        <input type="text" id="NJKP" class ="theinput">
                     </div>
 
                     <div class="form">
                         <p>Masukkan nilai Tarif PBB:</p>
-                        <input type="text" id=""tarifPBB class="theinput">
+                        <input type="text" id="PBB" class="theinput">
                     </div>
 
-                    <button onclick="">Hitung Pajak</button>
+                    <button onclick="calculatePBB()">Hitung Pajak</button>
                 </div>
         </div>
 
         <!-- result untuk menampilkan hasil perhitungan -->
         <p id="result"></p>
     </div>
-
-    <script src="Tax.js"></script>
 </body>
 </html>
