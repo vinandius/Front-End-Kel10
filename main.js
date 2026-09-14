@@ -49,6 +49,7 @@ function calculatePPh(){
     const income = parseFloat(document.getElementById('income').value);
     const tunjangan = parseFloat(document.getElementById('tunjangan').value);
     const bonus = parseFloat(document.getElementById('bonus').value);
+    const iuran = parseFloat(document.getElementById('iuran').value);
 
     // Skenario jika error input terjadi, misalnya 
     // Jika pengguna tidak memasukkan nilai atau memasukkan nilai yang tidak valid.
@@ -64,16 +65,18 @@ function calculatePPh(){
 
     // Baru mulai menghitung pajak berdasarkan input pengguna, jika semua input memenuhi syarat.
 
-    const bruto = (income + tunjangan) * 12 + bonus;
-    const iuran = (bruto * 0.02) * 12;
+    const bruto = income + tunjangan + bonus;
 
 
     let biayaJabatan = bruto * 0.05;
-    if (biayaJabatan > 6000000) {
-        biayaJabatan = 6000000;
+    if (biayaJabatan > 500000) {
+        biayaJabatan = 500000;
     }
 
-    const neto = bruto - (biayaJabatan + iuran);
+    const neto = (bruto - (biayaJabatan + iuran)) * 12;
+    console.log("Bruto: " + bruto);
+    console.log("Biaya Jabatan: " + biayaJabatan);
+    console.log("Neto: " + neto);
     const nilaiPTKP = {
         "TK/0": 54000000, "TK/1": 58500000, "TK/2": 63000000, "TK/3": 67500000,
         "K/0": 58500000,  "K/1": 63000000,  "K/2": 67500000,  "K/3": 72000000,
@@ -81,6 +84,8 @@ function calculatePPh(){
     };
 
     let pkp = neto - nilaiPTKP[ptkp];
+    pkp = Math.floor(pkp / 1000) * 1000; 
+    console.log("PKP: " + pkp);
     if (pkp < 0) pkp = 0;
     
     // Perhitungan pajak secara progresif berdasarkan lapisan penghasilan kena pajak (PKP)
@@ -141,7 +146,9 @@ function calculatePBB() {
     }
 
     // Perhitungan dasar pengenaan pajak bumi dan bangunan (PBB)
-    let dasarPengenaan = njop - njoptkp;
+    let dasarPengenaan = (njop - njoptkp) * njkp / 100;
+
+    console.log("Dasar Pengenaan: " + dasarPengenaan);
 
     if (dasarPengenaan < 0) {
         dasarPengenaan = 0; 
@@ -151,9 +158,10 @@ function calculatePBB() {
 
     if (statpbb === "p2") {
         hasilPBB = dasarPengenaan * (tarifPbb / 100);
-        
+        console.log("Hasil PBB (P2): " + hasilPBB);
     } else if (statpbb === "p3") {
         hasilPBB = dasarPengenaan * (njkp / 100) * (tarifPbb / 100);
+        console.log("Hasil PBB (P3): " + hasilPBB);
     }
 
     // Menampilkan hasil perhitungan pajak bumi dan bangunan (PBB) dalam format mata uang Indonesia
