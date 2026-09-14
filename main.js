@@ -65,7 +65,7 @@ function calculatePPh(){
     // Baru mulai menghitung pajak berdasarkan input pengguna, jika semua input memenuhi syarat.
 
     const bruto = (income + tunjangan) * 12 + bonus;
-    const iuran = bruto * 0.02;
+    const iuran = (bruto * 0.02) * 12;
 
 
     let biayaJabatan = bruto * 0.05;
