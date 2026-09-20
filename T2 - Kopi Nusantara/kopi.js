@@ -65,4 +65,25 @@ document.addEventListener('DOMContentLoaded', function() {
                 panel.style.maxHeight = panel.scrollHeight + "px";
             }
     })}
+
+    // feature search bar
+    const searchInput = document.getElementById('searchProduct');
+    
+    searchInput.addEventListener('keyup', function() {
+        const filter = searchInput.value.toLowerCase();
+        const cards = document.querySelectorAll('.product-card');
+
+        cards.forEach(card => {
+            // Mengambil teks dari tag <p>
+            const text = card.querySelector('p').innerText.toLowerCase();
+            
+            // check teks match
+            if (text.includes(filter)) {
+                card.style.display = ''; 
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+
 });
