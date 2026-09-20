@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kopi Nusantara</title>
     <link rel="stylesheet" href="style.css">
-    <script src="kopi.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="jquery-4.0.0.min.js"></script>
 </head>
 
 <body>
@@ -39,7 +40,14 @@
     <section id="about" class="about-section bg-dark">
         <h3 class="text-beige">There's a lot of coffee out there,</h3>
         <h1 class="text=orange">but why choose us?</h1>
-        <button class="btn-primary">Learn more</button>
+        <button class="btn-primary" onclick="document.getElementById('aboutcomp').style.display='block'">Learn more</button>
+
+        <div id="aboutcomp" class="comp">
+            <div class="abouts">
+                <span class="closebtn" onclick="document.getElementById('aboutcomp').style.display='none'">&times;</span>
+                <p>Kami berkomitmen untuk memastikan kopi kami memiliki kualitas terbaik dan cita rasa yang unik, sehingga setiap teguk kopi yang Anda minum memberikan pengalaman yang terbaik.</p>
+            </div>
+        </div>
     </section>
 
     <!-- Company's products -->
@@ -99,6 +107,35 @@
                 </div>
             </div>
         </div>
+    </section>
+
+    <section id="faq">
+        <h1>FAQ</h1>
+        <button class="accordion">Apa itu kopi pancong?</button>
+        <div class="panel">
+            <p>Kopi pancong adalah kopi khas dari daerah Jawa Barat yang disajikan dengan cara tradisional menggunakan arang dan memiliki cita rasa kopi yang kuat.</p>
+        </div>
+
+        <button class="accordion">Apa yang membuat kopi joss unik?</button>
+        <div class="panel">
+            <p>Kopi joss terkenal karena arang yang digunakan dalam proses penyajian kopi tersebut, yaitu arang yang membara.</p>
+        </div>
+
+        <button class="accordion">Apa itu kopi khop?</button>
+        <div class="panel">
+            <p>Kopi khop adalah kopi khas Aceh yang diminum dengan cara menggunakan sedotan di sela-sela gelas yang terbalik di atas piring.</p>
+        </div>
+
+        <button class="accordion">Apa itu kopi tubruk?</button>
+        <div class="panel">
+            <p>Kopi tubruk adalah kopi yang dibuat dengan mencampurkan bubuk kopi dengan air panas.</p>
+        </div>
+
+        <button class="accordion">Apa yang membuat kopi rarobang unik?</button>
+        <div class="panel">
+            <p>Kopi rarobang menjadi unik karena kopinya yang dicampurkan dengan rempah-rempah seperti jahe, cengkeh, kayu manis, dan lain-lain.</p>
+        </div>
+
     </section>
 
     <!-- User's way to contact the company -->
