@@ -1,0 +1,53 @@
+.kumpulan-menu {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.item-menu {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    width: 100%;
+    max-width: 350px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    text-align: left;
+}
+
+.item-menu p {
+    margin: 10px 0;
+    color: #666;
+}
+
+.btn-detail {
+    background-color: #5D4037;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    width: 100%;
+}
+
+.btn-detail:hover {
+    background-color: #3E2723;
+}
+
+.info-kopi {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-left: 4px solid #5D4037;
+    border-radius: 4px;
+}
+
+.harga-text {
+    display: block;
+    color: #E64A19;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
