@@ -5,102 +5,121 @@
     <!-- Set the web dynamically adjust to different devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kopi Nusantara</title>
-    <script src="kopi.js"></script>
     <link rel="stylesheet" href="style.css">
+    <script src="kopi.js"></script>
 </head>
 
 <body>
-    <div id="herobanner">
-    <header>Kopi Nusantara</header>
-        <nav>
-            <a href="#">About Us</a>
-            <a href="#">Home</a>
-            <a href="#">Contact</a>
+    <div id="herobanner" class="hero-section">
+        <div class="hero-content">
+            <header class="hero-title">
+                <span class="text-orange">KOPI</span><br>
+                <span class="text-beige indent-text">NUSANTARA</span>
+                <hr class="divider">
+            </header>
+            <div class="hero-graphics">
+                <!-- Buat Gambar -->
+                <img src="Photos/karung kopi.png" alt="Biji Kopi" class="coffee-bag">
+                <img src="Photos/coffee-hero.png" alt="Cangkir Kopi" class="img-responsive hero-cup">
+            </div>
+        </div>
+
+        <nav class="navbar">
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+            </div>
             <!-- Cart for user's orderas -->
-            <img src="keranjang" style="width: 50px; height: auto;">
+            <img src="Photos/cart.png" style="width: 50px; height: auto; cursor: pointer;">
         </nav>
     </div>
 
     <!-- Company's profile -->
-    <div style="margin-bottom: 50px;">
-        <h3>There's a lot of coffee out there,</h3>
-        <h1>but why choose us?</h1>
-        <button>Learn more</button>
-    </div>
+    <section id="about" class="about-section bg-dark">
+        <h3 class="text-beige">There's a lot of coffee out there,</h3>
+        <h1 class="text=orange">but why choose us?</h1>
+        <button class="btn-primary">Learn more</button>
+    </section>
 
     <!-- Company's products -->
-    <div id="products" style="margin-bottom: 50px;">  
-        <h1>Explore Our Products!</h1>
-        <ul class="kumpulan menu">
-            <li class="item-menu">
-                <img src="Photos/Kopi Pancong.jpg" alt="Kopi Pancong" style="width:100px; height: auto;">
+    <section id="products" class="products-section bg-texture">
+        <h1 class="section-title text-orange">Explore Our Products!</h1>
+
+        <div class="product-grid">
+            <!-- KOPI PANCONG -->
+            <div class="product-card">
+                <img src="Photos/Kopi Pancong.jpg" alt="Kopi Pancong" class="img-responsive">
                 <p>Kopi Pancong</p>
                 <!-- Details about the product -->
-                <button class="btn-detail" id="kopi-pancong">Learn more</button>
-                <!-- Accordion for the product's details -->
+                <button id="kopi-pancong" class="btn-secondary btn-detail">Learn more</button>
                 <div id="info-kopi-pancong" class="info-kopi" style="display: none;">
                     <strong class="harga-text"></strong>
                     <p class="deskripsi-text"></p>
                 </div>
-            </li>
+            </div>
 
-            <li class="item-menu">
-                <img src="Photos/Kopi Joss.jpg" alt="Kopi Joss" style="width:100px; height: auto;">
+            <div class="product-card">
+                <img src="Photos/Kopi Joss.jpg" alt="Kopi Joss" class="img-responsive">
                 <p>Kopi Joss</p>
-                <button class="btn-detail" id="kopi-joss">Learn more</button>
+                <button id="kopi-joss" class="btn-secondary btn-detail">Learn more</button>
                 <div id="info-kopi-joss" class="info-kopi" style="display: none;">
                     <strong class="harga-text"></strong>
                     <p class="deskripsi-text"></p>
                 </div>
-            </li>
+            </div>
 
-            <li class="item-menu">
-                <img src="Photos/Kopi Khop.jpg" alt="Kopi Khop" style="width:100px; height: auto;">
+            <div class="product-card">
+                <img src="Photos/Kopi Khop.jpg" alt="Kopi Khop" class="img-responsive">
                 <p>Kopi Khop</p>
-                <button class="btn-detail" id="kopi-khop">Learn more</button>
+                <button id="kopi-khop" class="btn-secondary btn-detail">Learn more</button>
                 <div id="info-kopi-khop" class="info-kopi" style="display: none;">
                     <strong class="harga-text"></strong>
                     <p class="deskripsi-text"></p>
                 </div>
-            </li>
+            </div>
 
-            <li class="item-menu">
-                <img src="Photos/Kopi Tubruk.jpg" alt="Kopi Tubruk" style="width:100px; height: auto;">
+            <div class="product-card">
+                <img src="Photos/Kopi Tubruk.jpg" alt="Kopi Tubruk" class="img-responsive">
                 <p>Kopi Tubruk</p>
-                <button class="btn-detail" id="kopi-tubruk">Learn more</button>
+                <button id="kopi-tubruk" class="btn-secondary btn-detail">Learn more</button>
                 <div id="info-kopi-tubruk" class="info-kopi" style="display: none;">
                     <strong class="harga-text"></strong>
                     <p class="deskripsi-text"></p>
                 </div>
-            </li>
+            </div>
 
-            <li class="item-menu">
-                <img src="Photos/Kopi Rarobang.jpg" alt="Kopi Rarobang" alt="" style="width:100px; height: auto;">
+            <div class="product-card">
+                <img src="Photos/Kopi Rarobang.jpg" alt="Kopi Rarobang" class="img-responsive">
                 <p>Kopi Rarobang</p>
-                <button class="btn-detail" id="kopi-rarobang">Learn more</button>
+                <button id="kopi-rarobang" class="btn-secondary btn-detail">Learn more</button>
                 <div id="info-kopi-rarobang" class="info-kopi" style="display: none;">
                     <strong class="harga-text"></strong>
                     <p class="deskripsi-text"></p>
                 </div>
-            </li>
-        </ul>
-    </div>  
+            </div>
+        </div>
+    </section>
 
     <!-- User's way to contact the company -->
-    <footer id="contact">
-        <div>
-            <p>Our social media</p>
-            <a href="insta">Our Instagram</a>
-            <a href="tiktok">Our Tiktok</a>
-        </div>
+    <footer id="contact" class="footer-section">
+        <div class="footer-grid">
+            <div class="footer-box">
+                <p class="text-orange">Our social media</p>
+                <div class="social-links">
+                    <a href="insta">Instagram</a>
+                    <a href="tiktok">Tiktok</a>
+                </div>
+            </div>
 
-        <div>
-            <p>Any question? Don't hesitate to ask us!</p>
-            <button id="sendEmail">Send us email!</button>
+            <div class="footer-box">
+                <p class="text-beige">Any question? Don't hesitate to ask us!</p>
+                <button id="sendEmail" class="btn-primary">Send us email!</button>
+            </div>
         </div>
 
         <!-- Copyright -->
-        &copy; 2026 Kopi Nusantara. All rights reserved
+        <p class="copyright">&copy; 2026 Kopi Nusantara. All rights reserved</p>
     </footer>
 </body>
 </html>

@@ -1,53 +1,385 @@
-.kumpulan-menu {
-    list-style-type: none;
+/* MOBILE*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #160e0a;
+    color:#eaddcf;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.img-responsive{
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+/* Buat palet warna */
+.text-orange{
+    color: #d87d4a;
+}
+
+.text-beige{
+    color: #eaddcf;
+}
+
+.bg-dark {
+    background-color: #160e0a;
+}
+.bg-texture{
+    background-color: #2a1f18; /* pisah section*/
+}
+
+/*Tombol*/
+.btn-primary, .btn-secondary{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.btn-primary{
+    background-color: #d87d4a;
+    color: white;
+}
+
+.btn-secondary{
+    background-color: #eaddcf;
+    color: #160e0a;
+}
+
+.btn-primary:hover, .btn-secondary:hover{
+    opacity: 0.8;
+}
+
+/*Hero & Navbar*/
+.hero-section{
+    background: linear-gradient(rgba(22, 14, 10, 0.7), rgba(22, 14, 10, 0.7)), url('Photos/background-hero.png') center/cover;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    justify-content: space-between;
+    border-top: 30px solid #0d0806;
+}
+
+/* Flexbox konten mobile */
+.hero-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 40px auto 0 auto;
+    padding: 0 20px;
+}
+
+/* Ukuran teks buat hp */
+.hero-title{
+    font-size: 36px;
+    font-weight: 900;
+    line-height: 1.1;
+    text-align: left;
+    width: 100%;
+}
+
+.indent-text{
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.divider.indent-text{
+    width: calc(80% - 35px);
+}
+.divider{
+    border: none;
+    border-top: 2px solid #eaddcf;
+    width: 80%;
+    margin: 15px auto;
+}
+
+.hero-graphics{
+    width: 100%;
+    position: relative; /*Buat lock layer gambar*/
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    z-index: 10;
     align-items: center;
 }
 
-.item-menu {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 15px;
+.coffee-bag{
+    position: absolute;
+    top: -15%;
+    right: -5%;
+    width: 70%;
+    max-width: 300px;
+    z-index: 1;
+    opacity: 0.9;
+}
+
+.hero-cup{
+    position: relative;
+    width: 90%;
+    max-width: 400px;
+    z-index: 2;
+    filter: drop-shadow(0 15px 15px rgba(0,0,0,0.5));
+    margin-bottom: -30px;
+}
+
+/* Flexbox navbar */
+
+.navbar{
+    background-color: #0d0806;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    position: relative;
+    z-index: 5;
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links a{
+    color: #eaddcf;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.cart-icon{
+    width: 25px;
+    height: auto;
+}
+
+/* Section About */
+
+.about-section{
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.about-section h1{
+    margin-bottom: 20px;
+}
+
+/* Section Product */
+.products-section{
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.section-title {
+    margin-bottom: 30px;
+}
+
+.btn-detail{
     width: 100%;
-    max-width: 350px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.info-kopi{
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #160e0a;
+    border-left: 4 px solid #d87d4a;
+    border-radius: 4px;
     text-align: left;
 }
 
-.item-menu p {
-    margin: 10px 0;
-    color: #666;
-}
-
-.btn-detail {
-    background-color: #5D4037;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    width: 100%;
-}
-
-.btn-detail:hover {
-    background-color: #3E2723;
-}
-
-.info-kopi {
-    margin-top: 15px;
-    padding: 10px;
-    background-color: #f1f1f1;
-    border-left: 4px solid #5D4037;
-    border-radius: 4px;
-}
-
-.harga-text {
+.harga-text{
     display: block;
-    color: #E64A19;
+    color: #d87d4a;
     font-size: 18px;
     margin-bottom: 5px;
+}
+
+.deskripsi-text{
+    font-size: 14px;
+    color: #eaddcf;
+}
+
+/* Grid Mobile */
+.product-grid{
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 20px;
+    max-width: 1110px;
+    margin: 0 auto;
+}
+
+/*Section gambar Produk*/
+.product-card {
+    background-color:#eaddcf;
+    color: #160e0a;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.product-card p{
+    margin: 15px 0;
+    font-weight: 500;
+}
+
+/* FOOTER */
+
+.footer-section{
+    background-color: #0d0806;
+    padding: 40px 20px 20px;
+}
+
+.footer-grid{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.social-links a{
+    display: block;
+    color: #eaddcf;
+    text-decoration: none;
+    margin-top: 5px;
+}
+
+.copyright {
+    text-align: center;
+    font-size: 12.8px;
+    border-top: 1px solid rgba(234, 221, 207, 0.2);
+    padding-top: 20px;
+}
+
+/* Media Queries */
+
+/* Tablet (>= 576px) */
+@media (min-width: 576px){
+    .hero-title{
+        font-size: 48px;
+        width: 80%;
+        margin: 0 auto;
+        position: relative;
+        z-index: 20;
+    }
+
+    .hero-graphics{
+        margin-top: 10px;
+    }
+
+    .hero-cup{
+        max-width: 450px;
+        margin-bottom: -40px;
+    }
+
+    .coffee-bag{
+        max-width: 320px;
+    }
+
+    .product-grid{
+        grid-template-columns: 48% 48%;
+        justify-content: space-between;
+    }
+    
+    .footer-grid{
+        flex-direction: row;
+        justify-content: space-around;
+        text-align: left;
+    }
+}
+
+/*Tablet besar contoh Surface Pro*/
+@media(min-width: 768px){
+    .hero-content{
+        flex-direction: row;
+        margin: 40px 0 0 0;
+        padding: 0 0 0 5%;
+    }
+
+    .hero-title{
+        text-align: left;
+        font-size: 48px;
+        width: 50%;
+    }
+
+    .hero-graphics{
+        width: 50%;
+        justify-content: flex-end;
+        margin-top: 0;
+    }
+
+    .hero-cup{
+        width: 120%;
+        max-width: 500px;
+        right: 0px;
+        margin-bottom: -50px;
+    }
+
+    .coffee-bag{
+        top: -20%;
+        right: 0;
+        width: 80%;
+    }
+}
+
+/* Desktop (>= 992px) */
+@media (min-width: 992px){
+    .hero-content{
+        flex-direction: row;
+        margin: 60px 0 0 0;
+        max-width: 100%;
+        padding: 0 0 0 10%;
+    }
+
+    .hero-title {
+        font-size: 64px;
+        width: 45%;
+        text-align: left;
+    }
+
+    .hero-graphics{
+        width: 50%;
+        justify-content: flex-end;
+        margin-top: 0;
+    }
+
+    .divider{ 
+        margin: 20px 0;
+        width: 100%;
+    }
+
+    .hero-cup{
+        width: 130%;
+        max-width: 650px;
+        right: -20px;
+        margin-bottom: -70px;
+    }
+
+    .coffee-bag{
+        top: -20%;
+        right: 0;
+        width: 75%;
+        max-width: none;
+    }
+
+    .product-grid{
+        grid-template-columns: 31% 31% 31%;
+        justify-content: space-between;
+    }
+
+    .nav-links{
+        gap: 40px;
+    }
+
+    .nav-links a{
+        font-size: 18px;
+    }
 }
