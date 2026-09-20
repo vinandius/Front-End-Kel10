@@ -23,6 +23,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 };
 
+    const tombolAbout = document.querySelector('.btn-primary');
+    tombolAbout.addEventListener('click', function() {
+        document.getElementById('aboutcomp').style.display='block';
+    })
+
+
     const tombolDetails = document.querySelectorAll('.btn-detail');
 
     tombolDetails.forEach(tombol => {
