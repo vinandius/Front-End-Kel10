@@ -383,3 +383,158 @@ body{
         font-size: 18px;
     }
 }
+
+/* Animasi muncul dari kiri */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animasi muncul dari kanan */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animasi muncul dari bawah */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animasi muncul perlahan */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animasi coffee bag melayang */
+@keyframes floatingBag {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(15deg);
+    }
+}
+
+/* Animasi cup sedikit naik turun */
+@keyframes floatingCup {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Animasi tombol */
+@keyframes buttonPop {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Hero title */
+.hero-title {
+    animation: slideInLeft 1s ease-out;
+}
+
+/* Garis pembatas */
+.divider {
+    animation: fadeIn 1.5s ease-out;
+}
+
+/* Gambar utama */
+.hero-cup {
+    animation: slideInRight 1s ease-out, floatingCup 4s ease-in-out 1s infinite;
+}
+
+/* Coffee bag */
+.coffee-bag {
+    animation: slideInRight 1.2s ease-out, floatingBag 4s ease-in-out 1.2s infinite;
+}
+
+/* Navbar */
+.navbar {
+    animation: fadeIn 1s ease-out;
+}
+
+/* About section */
+.about-section {
+    animation: slideUp 1s ease-out;
+}
+
+/* Judul section */
+.section-title {
+    animation: slideUp 0.8s ease-out;
+}
+
+/* Product card */
+.product-card {
+    animation: slideUp 0.8s ease-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Product card ketika disentuh mouse */
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+}
+
+/* Tombol */
+.btn-primary,
+.btn-secondary {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Efek tombol ketika hover */
+.btn-primary:hover,
+.btn-secondary:hover {
+    animation: buttonPop 0.3s ease;
+}
+
+/* Social links */
+.social-links a {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: translateX(5px);
+}
