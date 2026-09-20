@@ -27,12 +27,12 @@
 
         <nav class="navbar">
             <div class="nav-links">
-                <a href="#">Home</a>
-                <a href="#">About Us</a>
-                <a href="#">Contact</a>
+                <a href="#herobanner">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#contact">Contact</a>
             </div>
             <!-- Cart for user's orderas -->
-            <img src="Photos/cart.png" style="width: 50px; height: auto;">
+            <img src="Photos/cart.png" class="cart-btn" onclick="window.location.href='#products'">
         </nav>
     </div>
 
@@ -53,6 +53,11 @@
     <!-- Company's products -->
     <section id="products" class="products-section bg-texture">
         <h1 class="section-title text-orange">Explore Our Products!</h1>
+
+        <!-- Search bar product -->
+        <div class="search-container">
+            <input type="text" id="searchProduct" class="search-input" placeholder="Cari kopi mu...">
+        </div>
 
         <div class="product-grid">
             <!-- KOPI PANCONG -->
