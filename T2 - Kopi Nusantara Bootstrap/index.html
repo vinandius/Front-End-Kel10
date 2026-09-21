@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Set the web dynamically adjust to different devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kopi Nusantara</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="kopi.js"></script>
+</head>
+
+<body>
+    <div id="herobanner" class="hero-section">
+        <div class="hero-content">
+            <header class="hero-title">
+                <span class="text-orange">KOPI</span><br>
+                <span class="text-beige indent-text">NUSANTARA</span>
+                <hr class="divider">
+            </header>
+            <div class="hero-graphics">
+                <!-- Buat Gambar -->
+                <img src="Photos/karung kopi.png" alt="Biji Kopi" class="coffee-bag">
+                <img src="Photos/coffee-hero.png" alt="Cangkir Kopi" class="img-responsive hero-cup">
+            </div>
+        </div>
+
+        <nav class="navbar">
+            <div class="nav-links">
+                <a href="#herobanner">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <!-- Cart for user's orderas -->
+            <img src="Photos/cart.png" class="cart-btn" onclick="window.location.href='#products'">
+        </nav>
+    </div>
+
+    <!-- Company's profile -->
+    <section id="about" class="about-section bg-dark">
+        <h3 class="text-beige">There's a lot of coffee out there,</h3>
+        <h1 class="text-orange">but why choose us?</h1>
+        <button class="btn-default" onclick="document.getElementById('aboutcomp').style.display='block'">Learn more</button>
+
+        <div id="aboutcomp" class="comp">
+            <div class="abouts">
+                <span class="closebtn" onclick="document.getElementById('aboutcomp').style.display='none'">&times;</span>
+                <p class="text-orange">Kami berkomitmen untuk memastikan kopi kami memiliki kualitas terbaik dan cita rasa yang unik, sehingga setiap teguk kopi yang Anda minum memberikan pengalaman yang terbaik.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company's products -->
+    <section id="products" class="products-section bg-texture">
+        <h1 class="section-title text-orange">Explore Our Products!</h1>
+
+        <!-- Search bar product -->
+        <div class="search-container">
+            <input type="text" id="searchProduct" class="search-input" placeholder="Cari kopi mu...">
+        </div>
+
+        <div class="product-grid">
+            <!-- KOPI PANCONG -->
+            <div class="card">
+                <div class="card-body">
+                    <img src="Photos/Kopi Pancong.jpg" alt="Kopi Pancong" class="card-img-top img-responsive">
+                    <p>Kopi Pancong</p>
+                    <!-- Details about the product -->
+                    <button id="kopi-pancong" class="btn-info btn-detail">Learn more</button>
+                    <div id="info-kopi-pancong" class="info-kopi" style="display: none;">
+                        <strong class="harga-text"></strong>
+                        <p class="deskripsi-text"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <img src="Photos/Kopi Joss.jpg" alt="Kopi Joss" class="card-img-top img-responsive">
+                    <p>Kopi Joss</p>
+                    <button id="kopi-joss" class="btn-info btn-detail">Learn more</button>
+                    <div id="info-kopi-joss" class="info-kopi" style="display: none;">
+                        <strong class="harga-text"></strong>
+                        <p class="deskripsi-text"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <img src="Photos/Kopi Khop.jpg" alt="Kopi Khop" class="card-img-top img-responsive">
+                    <p>Kopi Khop</p>
+                    <button id="kopi-khop" class="btn-info btn-detail">Learn more</button>
+                    <div id="info-kopi-khop" class="info-kopi" style="display: none;">
+                        <strong class="harga-text"></strong>
+                        <p class="deskripsi-text"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <img src="Photos/Kopi Tubruk.jpg" alt="Kopi Tubruk" class="card-img-top img-responsive">
+                    <p>Kopi Tubruk</p>
+                    <button id="kopi-tubruk" class="btn-info btn-detail">Learn more</button>
+                    <div id="info-kopi-tubruk" class="info-kopi" style="display: none;">
+                        <strong class="harga-text"></strong>
+                        <p class="deskripsi-text"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <img src="Photos/Kopi Rarobang.jpg" alt="Kopi Rarobang" class="card-img-top img-responsive">
+                    <p>Kopi Rarobang</p>
+                    <button id="kopi-rarobang" class="btn-info btn-detail">Learn more</button>
+                    <div id="info-kopi-rarobang" class="info-kopi" style="display: none;">
+                        <strong class="harga-text"></strong>
+                        <p class="deskripsi-text"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq">
+        <h1>FAQ</h1>
+        <button class="panel-heading">Apa itu kopi pancong?</button>
+        <div class="panel-body">
+            <p>Kopi pancong adalah kopi khas dari daerah Jawa Barat yang disajikan dengan cara tradisional menggunakan arang dan memiliki cita rasa kopi yang kuat.</p>
+        </div>
+
+        <button class="panel-heading">Apa yang membuat kopi joss unik?</button>
+        <div class="panel-body">
+            <p>Kopi joss terkenal karena arang yang digunakan dalam proses penyajian kopi tersebut, yaitu arang yang membara.</p>
+        </div>
+
+        <button class="panel-heading">Apa itu kopi khop?</button>
+        <div class="panel-body">
+            <p>Kopi khop adalah kopi khas Aceh yang diminum dengan cara menggunakan sedotan di sela-sela gelas yang terbalik di atas piring.</p>
+        </div>
+
+        <button class="panel-heading">Apa itu kopi tubruk?</button>
+        <div class="panel-body">
+            <p>Kopi tubruk adalah kopi yang dibuat dengan mencampurkan bubuk kopi dengan air panas.</p>
+        </div>
+
+        <button class="panel-heading">Apa yang membuat kopi rarobang unik?</button>
+        <div class="panel-body">
+            <p>Kopi rarobang menjadi unik karena kopinya yang dicampurkan dengan rempah-rempah seperti jahe, cengkeh, kayu manis, dan lain-lain.</p>
+        </div>
+
+    </section>
+
+    <!-- User's way to contact the company -->
+    <footer id="contact" class="footer-section">
+        <div class="footer-grid">
+            <div class="footer-box">
+                <p class="text-orange">Our social media</p>
+                <div class="social-links">
+                    <a href="insta">Instagram</a>
+                    <a href="tiktok">Tiktok</a>
+                </div>
+            </div>
+
+            <div class="footer-box">
+                <p class="text-beige">Any question? Don't hesitate to ask us!</p>
+                <button id="sendEmail" class="btn-primary">Send us email!</button>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <p class="copyright">&copy; 2026 Kopi Nusantara. All rights reserved</p>
+    </footer>
+</body>
+</html>
