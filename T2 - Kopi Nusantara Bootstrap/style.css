@@ -11,8 +11,8 @@ html {
 
 body{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #160e0a;
-    color:#eaddcf;
+    background-color: #160e0a !important;
+    color:#301d0a;
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -213,32 +213,36 @@ body{
     margin-bottom: -30px;
 }
 
-/* Flexbox navbar */
+/* Navbar portion */
 
-.navbar{
-    background-color: #0d0806;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
+.navbar.bg-dark {
+    background-color: #0d0806 !important;
     position: relative;
     z-index: 9999;
 }
 
-.nav-links {
-    display: flex;
-    gap: 15px;
+.navbar-dark .navbar-nav .nav-link {
+    color: #eaddcf !important;
+    display: inline-block;
+    transition: transform 0.2s ease, color 0.2s ease;
 }
 
-.nav-links a{
-    color: #eaddcf;
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+    color: #e56013 !important;
+    transform: translateY(-3px);
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: #eaddcf !important;
     text-decoration: none;
-    font-size: 14px;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.cart-icon{
-    width: 25px;
-    height: auto;
+.text-orange {
+    color: #d87d4a !important;
 }
 
 /* Section About */
@@ -298,8 +302,8 @@ body{
 
 /*Section gambar Produk*/
 .card {
-    background-color:#eaddcf;
-    color: #160e0a;
+    background-color:#eaddcf  !important;
+    color: #160e0a !important;
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
@@ -620,15 +624,18 @@ body{
 }
 
 #faq {
-    padding: 30px 20px;
+    background-color: #0d0806;
+    padding: 30px 40px;
     max-width: 900px;
-    margin: 0 auto;
+    margin: 50px auto;
     text-align: left;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
 #faq h1 {
     color: #d87d4a;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 .panel-heading {
