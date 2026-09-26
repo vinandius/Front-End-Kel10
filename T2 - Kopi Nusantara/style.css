@@ -75,10 +75,10 @@ body{
 }
 
 .bg-dark {
-    background-color: #160e0a;
+    background: linear-gradient(to right, #160e0a, #3f2a20);  
 }
 .bg-texture{
-    background-color: #2a1f18; /* pisah section*/
+    background-color: linear-gradient(to right, #2a1f18, #4f3320); /* pisah section*/
 }
 
 /*Tombol*/
@@ -142,7 +142,7 @@ body{
 
 /*Hero & Navbar*/
 .hero-section{
-    background: linear-gradient(rgba(22, 14, 10, 0.7), rgba(22, 14, 10, 0.7)), url('Photos/background-hero.png') center/cover;
+    background: linear-gradient(rgba(22, 14, 10, 0.7), rgba(55, 35, 26, 0.7)), url('Photos/background-hero.png') center/cover;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -216,7 +216,7 @@ body{
 /* Flexbox navbar */
 
 .navbar{
-    background-color: #0d0806;
+    background: linear-gradient(to right, #0d0806, rgba(55, 35, 26, 0.7));
     display: flex;
     justify-content: space-between;
     align-items: center;

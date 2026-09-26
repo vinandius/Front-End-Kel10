@@ -716,3 +716,33 @@ body{
     font-family: sans-serif;
     animation: popupMuncul 0.3s ease-out;
 }
+
+/* Accordion Bootstrap */
+.accordion-item {
+    background-color: #160e0a;
+    border: 1px solid rgba(234,221,207,0.15);
+}
+
+.accordion-button{
+    background-color: #160e0a;
+    color: #eaddcf;
+}
+
+.accordion-button:not(.collapsed){
+    background-color: #241710;
+    color: #d87d4a;
+    box-shadow: none;
+}
+
+.accordion-body{
+    color: #eaddcf;
+}
+
+.accordion-button:focus{
+    box-shadow: none;
+    border-color: rgba(216,125,74,0.5);
+}
+
+.accordion-button::after{
+    filter: invert(1);
+}
