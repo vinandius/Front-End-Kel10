@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    
     <!-- Set the web dynamically adjust to different devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kopi Nusantara</title>
@@ -20,22 +21,42 @@
                 <hr class="divider">
             </header>
             <div class="hero-graphics">
+
                 <!-- Buat Gambar -->
                 <img src="Photos/karung kopi.png" alt="Biji Kopi" class="coffee-bag">
                 <img src="Photos/coffee-hero.png" alt="Cangkir Kopi" class="img-responsive hero-cup">
             </div>
         </div>
 
-        <nav class="navbar">
-            <div class="nav-links">
-                <a href="#herobanner">Home</a>
-                <a href="#about">About Us</a>
-                <a href="#contact">Contact</a>
+        <!-- Navbar Bootstrap -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+            <div class="container">
+                <a class="navbar-brand text-orange fw-bold d-lg-none" href="#">Kopi Nusantara</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav w-100 align-items-lg-center">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#herobanner">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                        <li class="nav-item ms-lg-auto mt-2 mt-lg-0">
+                            <a href="#products" class="nav-link p-0">
+                                <img src="Photos/cart.png" alt="Cart" class="cart-btn">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <!-- Cart for user's orderas -->
-            <img src="Photos/cart.png" class="cart-btn" onclick="window.location.href='#products'">
         </nav>
-    </div>
 
     <!-- Company's profile -->
     <section id="about" class="about-section bg-dark">
@@ -52,79 +73,101 @@
     </section>
 
     <!-- Company's products -->
-    <section id="products" class="products-section bg-texture">
-        <h1 class="section-title text-orange">Explore Our Products!</h1>
+    <section id="products" class="products-section bg-texture container my-5">
+        <div class="container" style="max-width: 1000px;"></div>
+            <h1 class="section-title text-orange mb-4 text-center">Explore Our Products!</h1>
 
-        <!-- Search bar product -->
-        <div class="search-container">
-            <input type="text" id="searchProduct" class="search-input" placeholder="Cari kopi mu...">
-        </div>
-
-        <div class="product-grid">
-            <!-- KOPI PANCONG -->
-            <div class="card">
-                <div class="card-body">
-                    <img src="Photos/Kopi Pancong.jpg" alt="Kopi Pancong" class="card-img-top img-responsive">
-                    <p>Kopi Pancong</p>
-                    <!-- Details about the product -->
-                    <button id="kopi-pancong" class="btn-info btn-detail">Learn more</button>
-                    <div id="info-kopi-pancong" class="info-kopi" style="display: none;">
-                        <strong class="harga-text"></strong>
-                        <p class="deskripsi-text"></p>
+            <!-- Search bar product -->
+            <div class="row justify-content-center mb-5">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="search-container row justify-content-center mb-5">
+                        <input type="text" id="searchProduct" class="search-input form-control form-control-lg shadow-sm" placeholder="Cari kopi mu...">
                     </div>
                 </div>
             </div>
 
-            <div class="card">
-                <div class="card-body">
-                    <img src="Photos/Kopi Joss.jpg" alt="Kopi Joss" class="card-img-top img-responsive">
-                    <p>Kopi Joss</p>
-                    <button id="kopi-joss" class="btn-info btn-detail">Learn more</button>
-                    <div id="info-kopi-joss" class="info-kopi" style="display: none;">
-                        <strong class="harga-text"></strong>
-                        <p class="deskripsi-text"></p>
-                    </div>
-                </div>
-            </div>
+            <div class="row justify-content-center g-3">
 
-            <div class="card">
-                <div class="card-body">
-                    <img src="Photos/Kopi Khop.jpg" alt="Kopi Khop" class="card-img-top img-responsive">
-                    <p>Kopi Khop</p>
-                    <button id="kopi-khop" class="btn-info btn-detail">Learn more</button>
-                    <div id="info-kopi-khop" class="info-kopi" style="display: none;">
-                        <strong class="harga-text"></strong>
-                        <p class="deskripsi-text"></p>
-                    </div>
-                </div>
-            </div>
+                        <!-- KOPI PANCONG -->
+                        <div class="col-12 col-md-6 col-lg-4 product-card">
+                            <div class="card h-100 shadow-sm border-0">
+                                <div class="card-body d-flex flex-column justify-content-between text-center">
+                                    <img src="Photos/Kopi Pancong.jpg" alt="Kopi Pancong" class="card-img-top img-responsive object-fit-cover mb-3" style="height: 220px;">
+                                    <p class="fw-bold">Kopi Pancong</p>
+                                    <button id="kopi-pancong" class="btn-info btn-detail w-100 my-2">Learn more</button>
+                                    <div id="info-kopi-pancong" class="info-kopi" style="display: none;">
+                                        <strong class="harga-text d-block text-success mb-1"></strong>
+                                        <p class="deskripsi-text text-muted small mb-0"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-            <div class="card">
-                <div class="card-body">
-                    <img src="Photos/Kopi Tubruk.jpg" alt="Kopi Tubruk" class="card-img-top img-responsive">
-                    <p>Kopi Tubruk</p>
-                    <button id="kopi-tubruk" class="btn-info btn-detail">Learn more</button>
-                    <div id="info-kopi-tubruk" class="info-kopi" style="display: none;">
-                        <strong class="harga-text"></strong>
-                        <p class="deskripsi-text"></p>
-                    </div>
-                </div>
-            </div>
+                        <!-- KOPI JOSS -->
+                        <div class="col-12 col-md-6 col-lg-4 product-card">
+                            <div class="card h-100 shadow-sm border-0">
+                                <div class="card-body d-flex flex-column justify-content-between text-center">
+                                    <img src="Photos/Kopi Joss.jpg" alt="Kopi Joss" class="card-img-top img-responsive object-fit-cover mb-3" style="height: 220px;">
+                                    <p class="fw-bold">Kopi Joss</p>
+                                    <button id="kopi-joss" class="btn-info btn-detail w-100 my-2">Learn more</button>
+                                    <div id="info-kopi-joss" class="info-kopi" style="display: none;">
+                                        <strong class="harga-text d-block text-success mb-1"></strong>
+                                        <p class="deskripsi-text text-muted small mb-0"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-            <div class="card">
-                <div class="card-body">
-                    <img src="Photos/Kopi Rarobang.jpg" alt="Kopi Rarobang" class="card-img-top img-responsive">
-                    <p>Kopi Rarobang</p>
-                    <button id="kopi-rarobang" class="btn-info btn-detail">Learn more</button>
-                    <div id="info-kopi-rarobang" class="info-kopi" style="display: none;">
-                        <strong class="harga-text"></strong>
-                        <p class="deskripsi-text"></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                        <!-- KOPI KHOP -->
+                        <div class="col-12 col-md-6 col-lg-4 product-card">
+                            <div class="card h-100 shadow-sm border-0">
+                                <div class="card-body d-flex flex-column justify-content-between text-center">
+                                    <img src="Photos/Kopi Khop.jpg" alt="Kopi Khop" class="card-img-top img-responsive object-fit-cover mb-3" style="height: 220px;">
+                                    <p class="fw-bold">Kopi Khop</p>
+                                    <button id="kopi-khop" class="btn-info btn-detail w-100 my-2">Learn more</button>
+                                    <div id="info-kopi-khop" class="info-kopi" style="display: none;">
+                                        <strong class="harga-text d-block text-success mb-1"></strong>
+                                        <p class="deskripsi-text text-muted small mb-0"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
+                        <!-- KOPI TUBRUK -->
+                        <div class="col-12 col-md-6 col-lg-4 product-card">
+                            <div class="card h-100 shadow-sm border-0">
+                                <div class="card-body d-flex flex-column justify-content-between text-center">
+                                    <img src="Photos/Kopi Tubruk.jpg" alt="Kopi Tubruk" class="card-img-top img-responsive object-fit-cover mb-3" style="height: 220px;">
+                                    <p class="fw-bold">Kopi Tubruk</p>
+                                    <button id="kopi-tubruk" class="btn-info btn-detail w-100 my-2">Learn more</button>
+                                    <div id="info-kopi-tubruk" class="info-kopi" style="display: none;">
+                                        <strong class="harga-text d-block text-success mb-1"></strong>
+                                        <p class="deskripsi-text text-muted small mb-0"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- KOPI RAROBANG -->
+                        <div class="col-12 col-md-6 col-lg-4 product-card">
+                            <div class="card h-100 shadow-sm border-0">
+                                <div class="card-body d-flex flex-column justify-content-between text-center">
+                                    <img src="Photos/Kopi Rarobang.jpg" alt="Kopi Rarobang" class="card-img-top img-responsive object-fit-cover mb-3" style="height: 220px;">
+                                    <p class="fw-bold">Kopi Rarobang</p>
+                                    <button id="kopi-rarobang" class="btn-info btn-detail w-100 my-2">Learn more</button>
+                                    <div id="info-kopi-rarobang" class="info-kopi" style="display: none;">
+                                        <strong class="harga-text d-block text-success mb-1"></strong>
+                                        <p class="deskripsi-text text-muted small mb-0"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> 
+                </div>
+            </section>
+
+    <!-- FAQ -->
     <section id="faq">
         <h1>FAQ</h1>
         <button class="panel-heading">Apa itu kopi pancong?</button>
