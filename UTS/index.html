@@ -4,52 +4,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rendang</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Rendang</h1>
+    <section>
+        <div id="start">
+            <div id="intro">
+                <h1>Rendang</h1>
+            </div>
 
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Lists</a>
-        <a href="#">Contact</a>
-    </nav>
+            <div id="navigation">
+                <nav>
+                    <a href="#">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#">Lists</a>
+                    <a href="#">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </section>
 
     <!-- Sejarah rendang -->
-    <section class="introRendang">
-        <h1>Sejarah</h1>
-        <img class="asal rendang" src="Photos/Rendang.jpg">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas condimentum nibh ut commodo suscipit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.Etiam sit amet nunc tristique mi malesuada cursus. Nullam lacus enim, vulputate vitae semper at, molestie sit amet odio. Cras cursus at augue in gravida. In ut sem metus. </p>
+    <section id="about">
+        <div id="history">
+            <h1>Sejarah</h1>
+            <img class="origin" src="Photos/Rendang.jpg">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas condimentum nibh ut commodo suscipit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.Etiam sit amet nunc tristique mi malesuada cursus. Nullam lacus enim, vulputate vitae semper at, molestie sit amet odio. Cras cursus at augue in gravida. In ut sem metus. </p>
+        </div>
 
         <!-- Foto Rendang 1 -->
-        <img src="Photos/Rendang.jpg">
-        <p>Lorem ipsum dolor sit amet lagi</p>
+        <div id="fr1">
+            <img src="Photos/Rendang.jpg">
+            <p>Lorem ipsum dolor sit amet lagi</p>
+        </div>
 
         <!-- Foto Rendang 2 -->
-        <img src="Photos/Rendang.jpg">
-        <p>Lorem ipsum dolor sit amet ketiga</p>
+        <div id="fr2">
+            <p>Lorem ipsum dolor sit amet ketiga</p>
+            <img src="Photos/Rendang.jpg">
+        </div>
     </section>
 
     <!-- Resep -->
     <section>
-        <h1>Resep</h1>
-        <img src="Photos/Rendang.jpg">
-        <p>Lorem ipsum dolor sit amet teramet amet lah wak</p>
+        <div id="recipe">
+            <h1>Resep</h1>
+            <img src="Photos/Rendang.jpg">
+            <p>Lorem ipsum dolor sit amet teramet amet lah wak</p>
+        </div>
     </section>
     
-    <!-- Jenis Rendang -->
-    <h1>Jenis Rendang</h1>
-    <search>
+    <section>
+        <!-- Jenis Rendang -->
+        <div id="jendang">
+            <h1>Jenis Rendang</h1>
+            <div class="search-container">
+                <input type="text" id="searchProduct" class="search-input" placeholder="Cari jenis rendang">
+            </div>
 
-    </search>
-    <!-- Gambar gambar rendang -->
-    <img src="Photos/Rendang.jpg">
-    <p>Jenis rendang 1</p>
+            <!-- Gambar gambar rendang -->
+            <div id="renlistcont">
+                <div class="renlist">
+                    <img src="Photos/Rendang.jpg">
+                    <p>Jenis rendang 1</p>
+                </div>
 
-    <img src="Photos/Rendang.jpg">
-    <p>Jenis rendang 2</p>
+                <div class="renlist">
+                    <img src="Photos/Rendang.jpg">
+                    <p>Jenis rendang 2</p>
+                </div>
 
-    <img src="Photos/Rendang.jpg">
-    <p>Jenis rendang 3</p>
+                <div class="renlist">
+                    <img src="Photos/Rendang.jpg">
+                    <p>Jenis rendang 3</p>
+                </div>
+
+                <div class="renlist">
+                    <img src="Photos/Rendang.jpg">
+                    <p>Jenis rendang 4</p>
+                </div>
+
+                <div class="renlist">
+                    <img src="Photos/Rendang.jpg">
+                    <p>Jenis rendang 5</p>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
