@@ -216,7 +216,7 @@ body{
 /* Navbar portion */
 
 .navbar.bg-dark {
-    background-color: #0d0806 !important;
+    background-color: #150c09 !important;
     position: relative;
     z-index: 9999;
 }
@@ -250,6 +250,7 @@ body{
 .about-section{
     padding: 60px 20px;
     text-align: center;
+    background-color: #332311;
 }
 
 .about-section h1{
