@@ -7,16 +7,19 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Header -->
     <section id="header-hero">
             <div id="intro">
                 <h1>RENDANG</h1>
+                <p>Dari Minangkabau, Sumatera barat</p>
             </div>
-
+    
             <div id="navigation">
                 <nav>
-                    <a href="#">Home</a>
+                    <a href="#header-hero">Home</a>
+                    <a href="#origin">Asal</a>
                     <a href="#about">About</a>
-                    <a href="#jendang">Lists</a>
+                    <a href="#jendang">Jenis</a>
                     <a href="#contact">Contact</a>
                 </nav>
             </div>
@@ -26,83 +29,233 @@
             </div>
     </section>
 
-    <!-- Sejarah rendang -->
+    <!--Asal -->
+    <section id="origin">
+        <div class="section-label"> 01 · ASAL-USUL</div>
+        <div class="origin-layout">
+            <div class="origin-img">
+                <img src="Photos/minangkabau.jpg" alt="Minangkabau, Sumatera Barat" class="origin-img">
+                <div class="origin-title">
+                    <p>DARI</p>
+                    <h2>MINANGKABAU</h2>
+                    <span>Sumatera Barat</span>
+                </div>
+            </div>
+
+            <div class="origin-text">
+                <p class="lead">
+                    Rendang merupakan masakan tradisional yang identik dengan masyarakat Minangkabau, Sumatera barat.
+                </p>
+                <p> Rendang berkembang sebagai bagian dari tradisi kuliner Minangkabau dan memiliki hubungan erat dengan perjalanan, adat, serta kehidupan masyarakatnya.</p>
+
+                <div class="origin-location">
+                    <span>ASAL</span>
+                    <strong>Minangkabau, Sumatera Barat</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rendang -->
     <section id="about">
         <div id="contfr">
-        <div id="history">
-            <h1>Sejarah</h1>
-            <img class="origin" src="Photos/Rendang.jpg">
-            <p>Rendang berasal dari Minangkabau, Sumatera Barat yang sudah dikenal sejak abad ke-16 sebagai bekal tahan lama untuk orang-orang perantau yang melakukan perjalanan menggunakan kapal laut. Rendang sendiri berasal dari kata "Marandang", yaitu proses memasak santan dan bumbu dalam waktu yang lama hingga kering dan menyusut. Bagi masyarakat Minangkabau, rendang memiliki filosofi, yaitu musyawarah dan mufakat.</p>
-        </div>
+            <div id="history">
+                <div class="section-label">02 · MENGENAL RENDANG</div>
+                <h1>Apa sebenarnya rendang?</h1>
+                
+                <div class="history-content">
+                    <div class="history-img">
+                        <img class="origin" src="Photos/Rendang.jpg" alt="Rendang">
+                    </div>
+                        <div class="history-text">
+                            <p> Rendang merupakan masakan yang identik dengan masyarakat Minangkabau, Sumatera Barat. Hidangan ini dibuat dengan daging, santan, cabai, dan berbagai rempah yang dimasak dalam waktu lama.</p>
+                            <p>Proses memasak yang panjang membuat cairan semakin berkurang hingga menghasilkan bumbu yang pekat dan melakat pada daging.</p>
+
+                            <div class="marandang-box">
+                                <div class="marandang-number">01</div>
+
+                                <div>
+                                    <h2>Marandang</h2>
+                                    <p> Istilah "marandang" merujuk pada proses memasak santan dan bumbu secara perlahan hingga mengering dan menyusut.</p>
+                                </div>
+                            </div>  
+                        </div>
+            
+                </div>
+            </div>
 
         
         <!-- Foto Rendang 1 -->
             <div id="fr1">
-                <img src="Photos/Rendang.jpg">
-                <p>Rendang umumnya berwarna hitam pekat.</p>
+                <img src="Photos/Rendang.jpg" alt="Rendang gelap">
+                <p>Rendang umumnya memiliki warna cokelat gelap hingga hitam pekat setelah dimasak dalam waktu lama.</p>
             </div>
 
             <!-- Foto Rendang 2 -->
             <div id="fr2">
                 <p>Jika daging yang dimasak masih berwarna merah kecokelatan dan dimasak tidak sampai kering, masyarakat Minangkabau menyebutnya "Kalio".</p>
-                <img src="Photos/Rendang.jpg">
+                <img src="Photos/Rendang.jpg" alt="Kali dan rendang">
+            </div>
+        </div>
+    </section>
+
+    <!-- Proses masak -->
+    <section id="process-section">
+
+        <div class="process-heading">
+            <div class="section-label"> 03 · PROSES MASAK</div>
+            <h1> Dari Gulai menjadi Rendang</h1>
+            <p>Rendang tidak langsung menjadi kering. Proses memasaknya berkembang melalui perubahan tekstur dan jumlah cairan.</p>
+        </div>
+
+        <div class="process">
+            
+            <div class="process-item">
+                <span>01</span>
+                <h2>Gulai</h2>
+                <p>Santan masih banyak dan kuah masih relatif encer.</p>
+            </div>
+
+            <div class="process-line"></div>
+
+            <div class="process-item">
+                <span>02</span>
+                <h2>Kalio</h2>
+                <p>Cairan mulai berkurang dan bumbu menjadi semakin kental.</p>
+            </div>
+
+            <div class="process-line"></div>
+
+            <div class="process-item">
+                <span>03</span>
+                <h2>Rendang</h2>
+                <p> Cairan semakin menguap hingga menghasilkan bumbu yang pekat dan melekat pada bahan.</p>
             </div>
         </div>
     </section>
 
     <!-- Resep -->
-    <section>
+    <section id="recipe-section">
+
         <div id="recipecont">
+
             <div id="recipe">
-                <h1>Resep</h1>
-                <img src="Photos/Rendang.jpg">
-                <p>Rendang menggunakan rempah-rempah, yaitu bumbu halus (bawang, cabai merah, jahe, kunyit, lengkuas, ketumbar), rempah aromatik (serai, daun salam, daun jeruk, daun kunyit).</p>
+                <div class="section-label"> 04 · BAHAN</div>
+                <h1>Rahasia rasa rendang</h1>
+
+                <div class="recipe-content">
+                    <img src="Photos/Rendang.jpg" alt="Rendan rempah" class="recipe-image">
+
+                    <div class="recipe-text">
+                        <p> Rendang menggunakan berbagai rempah yang menjadi bagian penting dari rasa dan aromanya.</p>
+                    
+                        <div class="ingredient-list">
+                            <div class="ingeredient">
+                                <span>01</span>
+                                <strong>Daging</strong>
+                            </div>
+
+                            <div class="ingeredient">
+                                <span>02</span>
+                                <strong>Santan</strong>
+                            </div>
+
+                            <div class="ingeredient">
+                                <span>03</span>
+                                <strong>Cabai</strong>
+                            </div>
+
+                            <div class="ingeredient">
+                                <span>04</span>
+                                <strong>Rempah</strong>
+                            </div>
+                        </div>
+                        <p class="ingeredient-note">
+                            bumbu halus dapat meliputi bawang, cabai merah, jahe, kunyit, lengkuas, dan ketumbar. Rempah aromatiknya antara lain serai, daun salam, daun jeruk, dan daun kunyit.
+                        </p> 
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    
-    <section>
-        <!-- Jenis Rendang -->
+
+    <!-- Jenis rendang -->
+    <section id="types-section">
         <div id="jendang">
-            <h1>Jenis Rendang</h1>
+
+            <div class="section-label"> 05 · JENIS</div>
+            <h1> Jenis Rendang</h1>
+
+            <div class="types-intro">
+                <p> Rendang tidak hanya hadir dalam satu bentuk. Bahan dan daerah pengolahannya dapat menghasilkan variasi yang berbeda.</p>
+            </div>
+
             <div class="search-container">
                 <input type="text" id="searchProduct" class="search-input" placeholder="Cari jenis rendang">
             </div>
-
-            <!-- Gambar gambar rendang -->
+            <!-- Gambar rendang -->
             <div id="renlistcont">
+
                 <div class="renlist">
-                    <img src="Photos/Rendang.jpg">
-                    <p>Jenis rendang 1</p>
+                    <img src="Photos/Rendang.jpg" alt="Rendang Daging">
+
+                    <div>
+                        <span class="ren-number">01</span>
+                        <p>Rendang Daging</p>
+                        <small>Rendang klasik berbahan daging.</small>
+                    </div>
                 </div>
 
                 <div class="renlist">
-                    <img src="Photos/Rendang.jpg">
-                    <p>Jenis rendang 2</p>
+                    <img src="Photos/Rendang.jpg" alt="Rendang Telur">
+
+                    <div>
+                        <span class="ren-number">02</span>
+                        <p>Rendang Telur</p>
+                        <small>Variasi rendang dengan bahan utama telur.</small>
+                    </div>
                 </div>
 
                 <div class="renlist">
-                    <img src="Photos/Rendang.jpg">
-                    <p>Jenis rendang 3</p>
+                    <img src="Photos/Rendang.jpg" alt="Rendang Lokan">
+
+                    <div>
+                        <span class="ren-number">03</span>
+                        <p>Rendang Lokan</p>
+                        <small>Rendang yang menggunakan lokan sebagai bahan utama.</small>
+                    </div>
                 </div>
 
                 <div class="renlist">
-                    <img src="Photos/Rendang.jpg">
-                    <p>Jenis rendang 4</p>
+                    <img src="Photos/Rendang.jpg" alt="Rendang Daun">
+
+                    <div>
+                        <span class="ren-number">04</span>
+                        <p>Rendang Daun</p>
+                        <small>Variasi rendang dengan bahan berbasis daun.</small>
+                    </div>
                 </div>
 
                 <div class="renlist">
-                    <img src="Photos/Rendang.jpg">
-                    <p>Jenis rendang 5</p>
+                    <img src="Photos/Rendang.jpg" alt="Rendang Runtiah">
+
+                    <div>
+                        <span class="ren-number">05</span>
+                        <p>Rendang Runtiah</p>
+                        <small>Variasi rendang dengan daging yang diolah lebih kecil.</small>
+                    </div>
                 </div>
+
             </div>
+
         </div>
     </section>
-
+    
     <footer id="contact">
         <h2> Contact</h2>
         <div class="footer">
             <p>Kunjungi instagram kami!</p>
+            <p>@instagramrendang</p>
             <p>Kritik dan saran? Silakan hubungi email kami: example@email.com</p>
         </div>
     </footer>
