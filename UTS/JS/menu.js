@@ -36,15 +36,17 @@ function renderProducts(keyword = "") {
         </div>
       </div>
     `).join("");
-    containerToko.addEventListener("click", e => {
-      if (e.target.classList.contains("btn-add")) {
-        addToCart(Number(e.target.dataset.id));
-        alert("Ditambahkan ke keranjang!");
-      }
-    });
+    
   }
 }
-
+if (containerToko){
+  containerToko.addEventListener("click", e => {
+    if (e.target.classList.contains("btn-add")) {
+      addToCart(Number(e.target.dataset.id));
+      alert("Ditambahkan ke keranjang!");
+    }
+  });
+}
 // Mekanisme Pencarian Produk
 document.getElementById("searchProduct").addEventListener("input", e => {
   renderProducts(e.target.value);
