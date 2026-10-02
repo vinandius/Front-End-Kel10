@@ -1480,4 +1480,300 @@ a{
     }
 }
 
+/* ============================= */
+/* RENDANG STORE */
+/* ============================= */
+
+#header-hero {
+display: flex;
+flex-direction: column;
+align-items: center;
+width: 100%;
+padding: 55px 20px 45px;
+background-color: var(--cream);
+text-align: center;
+}
+
+#storetitle {
+margin-bottom: 25px;
+}
+
+#storetitle h1 {
+margin: 0;
+color: var(--brown-dark);
+font-family: 'Playfair Display', serif;
+font-size: 52px;
+line-height: 1;
+letter-spacing: 2px;
+}
+
+#storetitle h1::after {
+content: "";
+display: block;
+width: 55px;
+height: 2px;
+margin: 18px auto 0;
+background-color: var(--red);
+}
+
+#nav nav {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+#nav nav a {
+display: inline-block;
+padding: 10px 20px;
+border: 1px solid var(--brown-light);
+border-radius: 4px;
+color: var(--brown);
+font-size: 11px;
+font-weight: 600;
+letter-spacing: 1.5px;
+text-decoration: none;
+text-transform: uppercase;
+transition: 0.3s ease;
+}
+
+#nav nav a:hover {
+background-color: var(--brown-dark);
+border-color: var(--brown-dark);
+color: var(--cream);
+}
+
+/* ============================= */
+/* PRODUCT SECTION */
+/* ============================= */
+
+#listrendang {
+width: 100%;
+padding: 75px 20px 110px;
+background-color: var(--cream-light);
+}
+
+#containerrendang {
+display: grid;
+grid-template-columns: 1fr;
+gap: 25px;
+width: 100%;
+max-width: 1150px;
+margin: 0 auto;
+}
+
+/* ============================= */
+/* PRODUCT CARD */
+/* ============================= */
+
+.product-card {
+position: relative;
+overflow: hidden;
+padding: 18px 18px 22px;
+background-color: var(--white);
+border-radius: 10px;
+border: 1px solid var(--cream-dark);
+box-shadow: 0 8px 25px rgba(53, 23, 13, 0.07);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+transform: translateY(-7px);
+box-shadow: 0 15px 35px rgba(53, 23, 13, 0.14);
+}
+
+/* ============================= */
+/* PRODUCT IMAGE */
+/* ============================= */
+
+.product-card .img-responsive {
+width: 100%;
+height: 250px;
+margin-bottom: 18px;
+object-fit: cover;
+border-radius: 7px;
+background-color: var(--cream-dark);
+}
+
+/* ============================= */
+/* PRODUCT NAME */
+/* ============================= */
+
+.product-card > p {
+margin-bottom: 15px;
+color: var(--brown-dark);
+font-family: 'Playfair Display', serif;
+font-size: 25px;
+font-weight: 700;
+line-height: 1.1;
+}
+
+/* ============================= */
+/* BUTTON */
+/* ============================= */
+
+.btn-detail {
+padding: 10px 17px;
+border: 1px solid var(--brown);
+border-radius: 4px;
+background-color: transparent;
+color: var(--brown);
+font-family: 'Poppins', sans-serif;
+font-size: 10px;
+font-weight: 600;
+letter-spacing: 1px;
+text-transform: uppercase;
+cursor: pointer;
+transition: all 0.3s ease;
+}
+
+.btn-detail:hover {
+background-color: var(--brown-dark);
+border-color: var(--brown-dark);
+color: var(--cream);
+}
+
+/* ============================= */
+/* PRODUCT INFORMATION */
+/* ============================= */
+
+.info-rendang {
+margin-top: 18px;
+padding-top: 16px;
+border-top: 1px solid var(--cream-dark);
+animation: showInfo 0.3s ease;
+}
+
+.harga-text {
+display: block;
+margin-bottom: 7px;
+color: var(--red);
+font-family: 'Playfair Display', serif;
+font-size: 21px;
+}
+
+.deskripsi-text {
+margin: 0;
+color: var(--brown-light);
+font-size: 12px;
+line-height: 1.7;
+}
+
+/* ============================= */
+/* DECORATION */
+/* ============================= */
+
+#listrendang::before {
+content: "OUR COLLECTION";
+display: block;
+max-width: 1150px;
+margin: 0 auto 35px;
+color: var(--red);
+font-size: 10px;
+font-weight: 600;
+letter-spacing: 3px;
+text-align: center;
+}
+
+/* ============================= */
+/* ANIMATION */
+/* ============================= */
+
+@keyframes showInfo {
+from {
+opacity: 0;
+transform: translateY(-5px);
+}
+
+
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+}
+
+/* ============================= */
+/* TABLET */
+/* ============================= */
+
+@media (min-width: 768px) {
+
+
+#header-hero {
+    padding: 70px 40px 55px;
+}
+
+#storetitle h1 {
+    font-size: 70px;
+}
+
+#listrendang {
+    padding: 85px 40px 120px;
+}
+
+#containerrendang {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+}
+
+.product-card .img-responsive {
+    height: 280px;
+}
+
+.product-card > p {
+    font-size: 28px;
+}
+
+
+}
+
+/* ============================= */
+/* DESKTOP */
+/* ============================= */
+
+@media (min-width: 1024px) {
+
+
+#header-hero {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 85px 50px 65px;
+}
+
+#storetitle h1 {
+    font-size: 88px;
+    letter-spacing: 4px;
+}
+
+#nav nav a {
+    font-size: 11px;
+}
+
+#listrendang {
+    padding: 100px 7% 140px;
+}
+
+#containerrendang {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.product-card {
+    padding: 20px 20px 25px;
+}
+
+.product-card .img-responsive {
+    height: 270px;
+}
+
+.product-card > p {
+    font-size: 28px;
+}
+
+.btn-detail {
+    padding: 11px 19px;
+}
+}
+
 
