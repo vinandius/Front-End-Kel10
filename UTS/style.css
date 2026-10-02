@@ -127,14 +127,15 @@ body {
     border-radius: 8px;
     border: 2px solid #502910;
     background-color: white;
-    color: #eaddcf;
+    color: #3b1d0c;
+    font-family: 'Poppins', sans-serif;
     font-size: 16px;
     outline: none;
     transition: 0.3s ease;
 }
 
 .search-input::placeholder {
-    color: rgba(234, 221, 207, 0.5);
+    color: rgba(59, 29, 12, 0.5);
 }
 
 .search-input:focus {
