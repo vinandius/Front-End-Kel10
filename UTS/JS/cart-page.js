@@ -2,10 +2,23 @@
    Berupa Logika untuk menampilkan isi keranjang dan menangani klik */
 
 if (!getCurrentUser()) {
-  alert("Silakan masuk dulu untuk melihat keranjang.");
-  window.location.href = "login.html";
+    tampilkanPeringatanLogin();
 } else {
-  initCart();
+    initCart();
+}
+
+function tampilkanPeringatanLogin() {
+    const overlay = document.createElement('div');
+    overlay.className = 'auth-warning-overlay';
+
+    overlay.innerHTML = `
+        <div class="auth-warning-box">
+            <h3>Akses Ditolak</h3>
+            <p>Silakan masuk (login) terlebih dahulu untuk melihat keranjang belanja Anda.</p>
+            <a href="login.html" class="auth-warning-btn">Ke Halaman Login</a>
+        </div>`;
+
+    document.body.appendChild(overlay);
 }
 
 function initCart() {

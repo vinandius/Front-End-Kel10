@@ -1,3 +1,37 @@
+/*fungsi mengganti alert dgn notifikasi*/
+function tampilkanNotifKeranjang(elemenTombol) {
+
+    let notifLama = document.querySelector('.cart-notification');
+    if (notifLama) notifLama.remove();
+
+    const notif = document.createElement('div');
+    notif.className = 'cart-notification';
+    notif.innerHTML = `
+        <span>Berhasil ditambahkan ke keranjang!</span>
+        <button class="notif-close">&times;</button>
+    `;
+
+    document.body.appendChild(notif);
+
+    if (window.innerWidth >= 1024) {
+        const posisiTombol = elemenTombol.getBoundingClientRect();
+        notif.style.left = (posisiTombol.right + window.scrollX + 15) + 'px';
+        notif.style.top = (posisiTombol.top + window.scrollY + (posisiTombol.height / 2)) + 'px';
+    } else {
+        notif.style.left = '';
+        notif.style.top = '';
+    }
+
+    notif.querySelector('.notif-close').addEventListener('click', (e) => {
+        e.stopPropagation();
+        notif.remove();
+    });
+
+    setTimeout(() => {
+        if (document.body.contains(notif)) notif.remove();
+    }, 5000);
+}
+
 /* Skrip untuk Menu Page
    Berupa Logika untuk menampilkan daftar produk, pencarian produk,
    dan menangani klik */
@@ -36,17 +70,18 @@ function renderProducts(keyword = "") {
         </div>
       </div>
     `).join("");
-    
   }
 }
+
 if (containerToko){
   containerToko.addEventListener("click", e => {
     if (e.target.classList.contains("btn-add")) {
       addToCart(Number(e.target.dataset.id));
-      alert("Ditambahkan ke keranjang!");
+      tampilkanNotifKeranjang(e.target);
     }
   });
 }
+
 // Mekanisme Pencarian Produk
 document.getElementById("searchProduct").addEventListener("input", e => {
   renderProducts(e.target.value);
