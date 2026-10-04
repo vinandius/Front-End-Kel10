@@ -1,12 +1,5 @@
 /* Skrip untuk Cart Page
    Berupa Logika untuk menampilkan isi keranjang dan menangani klik */
-
-if (!getCurrentUser()) {
-    tampilkanPeringatanLogin();
-} else {
-    initCart();
-}
-
 function tampilkanPeringatanLogin() {
     const overlay = document.createElement('div');
     overlay.className = 'auth-warning-overlay';
@@ -23,6 +16,11 @@ function tampilkanPeringatanLogin() {
 
 function initCart() {
   const itemsEl = document.getElementById("cartItems");
+  if (!itemsEl) return; 
+  if (!getCurrentUser()) {
+    tampilkanPeringatanLogin();
+    return;               // berhenti, jangan render keranjang
+  }
 
   function renderCart() {
     const products = getProducts();
@@ -75,3 +73,5 @@ function initCart() {
 
   renderCart();
 }
+
+initCart();
