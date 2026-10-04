@@ -21,7 +21,6 @@
 }
 
 /* Keseluruhan */
-
 *{
     box-sizing: border-box;
 }
@@ -39,6 +38,7 @@ body {
     background-color: var(--cream);
     color: var(--text);
     overflow-x: hidden;
+    user-select: none;
 }
 
 img{
@@ -48,6 +48,7 @@ img{
 
 h1, h2, h3, p {
     margin-top: 0;
+    user-select: none;
 }
 
 p {
@@ -67,6 +68,7 @@ a{
 .section-heading{
     max-width: 850px;
     margin-bottom: 45px;
+    user-select: none;
 }
 
 .section-heading h1, .section-heading h2{
@@ -76,6 +78,7 @@ a{
     font-size: 44px;
     line-height: 1.05;
     font-weight: 600;
+    user-select: none;
 }
 
 .section-number, .section-label{
@@ -83,8 +86,8 @@ a{
     color: var(--red);
     font-size: 10px;
     font-weight: 600;
+    user-select: none;
 }
-
 
 /* HERO */
 #header-hero{
@@ -93,12 +96,13 @@ a{
     align-items: center;
     width: 100%;
     padding: 30px 20px 80px;
+    user-select: none;
 }   
-
 
 #intro {
     text-align: center;
     margin-bottom: 25px;
+    user-select: none;
 }
 
 #intro .eyebrow{
@@ -108,6 +112,7 @@ a{
     font-weight: 600;
     letter-spacing: 2.5px;
     text-transform: uppercase;
+    user-select: none;
 }
 
 #intro h1{
@@ -117,6 +122,7 @@ a{
     line-height: 1;
     letter-spacing: 3px;
     color: var(--brown-dark);
+    user-select: none;
 }
 
 #intro > p:last-child {
@@ -124,10 +130,12 @@ a{
     color: var(--brown);
     font-size: 11px;
     letter-spacing: 1px;
+    user-select: none;
 }
 
 #navigation {
-   margin-bottom: 28px;
+    width: 100%;
+    z-index: 999;
 }
 
 #navigation nav{
@@ -135,22 +143,45 @@ a{
     flex-wrap: wrap;
     justify-content: center;
     gap: 13px 18px;
+    user-select: none;
+}
+
+#navigation.fixed-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--cream);
+    padding: 12px 0;
+    box-shadow: 0 4px 15px rgba(53, 23, 13, 0.08);
+    animation: slideDown 0.4s ease forwards;
 }
 
 #navigation nav a{
-    padding-bottom: 4px;
-    border-bottom: 1px solid transparent;
+    padding: 10px 15px;
+    border: 1px solid var(--brown-light);
+    border-radius: 5px;
+    background-color: var(--cream-light);
     color: var(--brown);
-    font-size: 10px;
+    font-size: 14px;
     font-weight: 600;
-    letter-spacing: 1.5px;
+    letter-spacing: 1.2px;
     text-decoration: none;
     text-transform: uppercase;
+    margin: 0;
+    transition: all 0.3s ease;
+    user-select: none;
 }
 
 #navigation nav a:hover {
-    color: var(--red);
-    border-bottom-color: var(--red);
+    background-color: var(--brown-dark);
+    color: var(--cream);
+    border-color: var(--brown-dark);
+}
+
+#navigation nav a.active {
+    background-color: var(--brown-dark) !important;
+    color: var(--cream) !important;
+    border-color: var(--brown-dark) !important;
 }
 
 #hero-image{
@@ -182,15 +213,16 @@ a{
     font-size: 9px;
     font-weight: 600;
     letter-spacing: 2px;
+    user-select: none;
 }
 
 .hero-text strong{
     font-family: 'Playfair Display', serif;
     font-size: 26px;
+    user-select: none;
 }
 
 /* ORIGIN */
-
 #origin{
     background-color: var(--cream-light);
 }
@@ -212,7 +244,7 @@ a{
     width: 100%;
     height: 370px;
     overflow: hidden;
-    clip-path: polygon(0 0, 100% 0, 100% 82%, 90% 100%, 0 100%); /*biar ada efek potongan foto*/
+    clip-path: polygon(0 0, 100% 0, 100% 82%, 90% 100%, 0 100%);
 }
 
 .origin-img img{
@@ -228,6 +260,7 @@ a{
     padding: 20px;
     background-color: var(--cream);
     border-left: 4px solid var(--red);
+    user-select: none;
 }
 
 .origin-title p{
@@ -236,6 +269,7 @@ a{
     font-size: 10px;
     font-weight: 600;
     letter-spacing: 2px;
+    user-select: none;
 }
 
 .origin-title h3{
@@ -244,6 +278,7 @@ a{
     font-family: 'Playfair Display', serif;
     font-size: 34px;
     line-height: 1;
+    user-select: none;
 }
 
 .origin-title span{
@@ -256,10 +291,12 @@ a{
     color: var(--brown-dark);
     font-size: 19px;
     line-height: 1.6;
+    user-select: none;
 }
 
 .origin-text > p:not(.lead) {
-    font-size: 14px
+    font-size: 14px;
+    user-select: none;
 }
 
 .origin-location{
@@ -276,16 +313,17 @@ a{
     font-size: 10px;
     font-weight: 600;
     letter-spacing: 2px;
+    user-select: none;
 }
 
 .origin-location strong{
     color: var(--brown-dark);
     font-family: 'Playfair Display', serif;
     font-size: 18px;
+    user-select: none;
 }
 
 /* About/History */
-
 #about{
     background-color: var(--cream);
 }
@@ -293,7 +331,7 @@ a{
 #contfr{
     width: 100%;
     max-width: 1150px;
-    margin: 0 aut;
+    margin: 0 auto;
 }
 
 #history{
@@ -337,10 +375,12 @@ a{
     color: var(--brown-dark);
     font-size: 19px;
     line-height: 1.6;
+    user-select: none;
 }
 
 .history-text > p:not(.lead){
     font-size: 14px;
+    user-select: none;
 }
 
 .marandang-box{
@@ -350,6 +390,7 @@ a{
     padding: 20px;
     background-color: var(--white);
     border-left: 3px solid var(--gold);
+    user-select: none;
 }
 
 .marandang-number{
@@ -357,6 +398,7 @@ a{
     color:var(--gold);
     font-family: 'Playfair Display', serif;
     font-size: 28px;
+    user-select: none;
 }
 
 .marandang-box h2{
@@ -364,15 +406,16 @@ a{
     color: var(--brown-dark);
     font-family: 'Playfair Display', serif;
     font-size: 25px;
+    user-select: none;
 }
 
 .marandang-box p{
     margin-bottom: 0;
     font-size: 13px;
+    user-select: none;
 }
 
 /* KONTEN RENDANG */
-
 #fr1, #fr2, .info-block {
     display: flex;
     flex-direction: column;
@@ -409,6 +452,7 @@ a{
     color: var(--gold);
     font-family: 'Playfair Display', serif;
     font-size: 28px;
+    user-select: none;
 }
 
 .fact-text h2, .info-text h2{
@@ -417,13 +461,14 @@ a{
     font-family: 'Playfair Display', serif;
     font-size: 30px;
     line-height: 1.1;
+    user-select: none;
 }
 
 .fact-text p, .info-text p{
     margin-bottom: 0;
     font-size: 14px;
+    user-select: none;
 }
-
 
 /* PROCESS */
 #process-section{
@@ -446,12 +491,14 @@ a{
     font-family: 'Playfair Display', serif;
     font-size: 40px;
     line-height: 1.1;
+    user-select: none;
 }
 
 .process-heading p{
     margin-bottom: 0;
     color:var(--cream-dark);
     font-size: 14px;
+    user-select: none;
 }
 
 .process{
@@ -470,6 +517,7 @@ a{
     color: var(--gold);
     font-family: 'Playfair Display', serif;
     font-size: 32px;
+    user-select: none;
 }
 
 .process-item h2{
@@ -477,12 +525,14 @@ a{
     color: var(--cream);
     font-family: 'Playfair Display', serif;
     font-size: 30px;
+    user-select: none;
 }
 
 .process-item p{
     margin-bottom: 0;
     color: var(--cream-dark);
     font-size: 13px;
+    user-select: none;
 }
 
 .process-line{
@@ -520,6 +570,7 @@ a{
     font-family: 'Playfair Display', serif;
     font-size: 46px;
     line-height: 1;
+    user-select: none;
 }
 
 .recipe-heading h2{
@@ -528,12 +579,14 @@ a{
     font-family: 'Playfair Display', serif;
     font-size: 30px;
     line-height: 1.1;
+    user-select: none;
 }
 
 .recipe-heading > p {
     max-width: 520px;
     margin-bottom: 0;
     font-size: 14px;
+    user-select: none;
 }
 
 .ingredient-area {
@@ -541,6 +594,7 @@ a{
     width: 100%;
     height: 650px;
     margin-bottom: 85px;
+    user-select: none;
 }
 
 .ingredient-circle{
@@ -580,6 +634,7 @@ a{
     font-weight: 600;
     letter-spacing: 1.5px;
     text-transform: uppercase;
+    user-select: none;
 }
 
 .ingredient-cabai {
@@ -644,12 +699,14 @@ a{
 .ingredient-center span {
     font-size: 11px;
     letter-spacing: 2px;
+    user-select: none;
 }
 
 .ingredient-center strong {
     font-family: 'Playfair Display', serif;
     font-size: 32px;
     line-height: 1;
+    user-select: none;
 }
 
 .recipe-content{
@@ -661,19 +718,14 @@ a{
 
 .recipe-image {
     width: 100%;
-
     height: 380px;
-
     overflow: hidden;
-
     border-radius: 10px;
 }
 
 .recipe-image img {
     width: 100%;
-
     height: 100%;
-
     object-fit: cover;
 }
 
@@ -701,6 +753,7 @@ a{
 
 .recipe-text > p {
     font-size: 14px;
+    user-select: none;
 }
 
 .ingredient-list {
@@ -722,21 +775,22 @@ a{
     color: var(--gold);
     font-size: 10px;
     letter-spacing: 1px;
+    user-select: none;
 }
 
 .ingredient strong {
     color: var(--brown-dark);
     font-family: 'Playfair Display', serif;
     font-size: 18px;
+    user-select: none;
 }
 
 .ingredient-note {
     color: var(--brown);
+    user-select: none;
 }
 
-
 /* MAKNA */
-
 #culture-section {
     background-color: var(--cream);
 }
@@ -757,6 +811,7 @@ a{
 
 .culture-card span {
     color: var(--gold);
+    user-select: none;
     font-family: 'Playfair Display', serif;
     font-size: 28px;
 }
@@ -766,11 +821,13 @@ a{
     color: var(--brown-dark);
     font-family: 'Playfair Display', serif;
     font-size: 30px;
+    user-select: none;
 }
 
 .culture-card p {
     margin-bottom: 0;
     font-size: 14px;
+    user-select: none;
 }
 
 .quote-box {
@@ -789,9 +846,7 @@ a{
     line-height: 1.3;
 }
 
-
 /* KARAKTER RENDANG*/
-
 #character-section {
     background-color: var(--green-dark);
     color: var(--cream);
@@ -812,6 +867,7 @@ a{
     font-family: 'Playfair Display', serif;
     font-size: 45px;
     line-height: 1.05;
+    user-select: none;
 }
 
 .character-list {
@@ -822,6 +878,7 @@ a{
 .character-item {
     display: flex;
     gap: 20px;
+    user-select: none;
     padding: 28px 0;
     border-bottom: 1px solid rgba(245, 239, 228, 0.25);
 }
@@ -831,6 +888,7 @@ a{
     color: var(--gold);
     font-family: 'Playfair Display', serif;
     font-size: 28px;
+    user-select: none;
 }
 
 .character-item h2 {
@@ -838,17 +896,17 @@ a{
     color: var(--cream);
     font-family: 'Playfair Display', serif;
     font-size: 30px;
+    user-select: none;
 }
 
 .character-item p {
     margin-bottom: 0;
     color: var(--cream-dark);
     font-size: 14px;
+    user-select: none;
 }
 
-
 /*JENIS RENDANG*/
-
 #types-section {
     background-color: var(--cream-light);
 }
@@ -856,7 +914,9 @@ a{
 #jendang {
     width: 100%;
     max-width: 1150px;
-    margin: 0 auto;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 #jendang > h1 {
@@ -865,6 +925,16 @@ a{
     font-family: 'Playfair Display', serif;
     font-size: 46px;
     line-height: 1.05;
+    user-select: none;
+}
+
+.section-title1 {
+    margin-left: 50px;
+    color: var(--brown-dark);
+    font-family: 'Playfair Display', serif;
+    font-size: 46px;
+    line-height: 1.05;
+    user-select: none;
 }
 
 .types-intro {
@@ -873,10 +943,11 @@ a{
 
 .types-intro p {
     font-size: 14px;
+    user-select: none;
 }
 
 .search-container {
-    margin: 30px 0;
+    margin: 30px 20px;
 }
 
 .search-input {
@@ -890,6 +961,7 @@ a{
     font-family: 'Poppins', sans-serif;
     font-size: 13px;
     outline: none;
+    user-select: none;
 }
 
 .search-input::placeholder {
@@ -932,6 +1004,7 @@ a{
     color: var(--gold);
     font-family: 'Playfair Display', serif;
     font-size: 20px;
+    user-select: none;
 }
 
 .renlist p {
@@ -939,17 +1012,17 @@ a{
     color: var(--brown-dark);
     font-family: 'Playfair Display', serif;
     font-size: 20px;
+    user-select: none;
 }
 
 .renlist small {
     color: var(--brown-light);
     font-size: 11px;
     line-height: 1.5;
+    user-select: none;
 }
 
-
 /*Closing */
-
 #closing-section {
     min-height: 75vh;
     display: flex;
@@ -970,44 +1043,32 @@ a{
 
 .closing-text h1 {
     margin-bottom: 20px;
-
     color: var(--cream);
-
     font-family: 'Playfair Display', serif;
-
     font-size: 50px;
-
     line-height: 1.05;
+    user-select: none;
 }
 
 .closing-text p {
     max-width: 600px;
-
     margin: 0 auto 30px;
-
     color: var(--cream-dark);
-
     font-size: 14px;
+    user-select: none;
 }
 
 .closing-text a {
     display: inline-block;
-
     padding: 12px 18px;
-
     border: 1px solid rgba(245, 239, 228, 0.4);
-
     color: var(--cream);
-
     font-size: 11px;
-
     font-weight: 600;
-
     letter-spacing: 1px;
-
     text-decoration: none;
+    user-select: none;
 }
-
 
 /*FOOTER */
 #contact {
@@ -1021,6 +1082,7 @@ a{
     margin-bottom: 25px;
     font-family: 'Playfair Display', serif;
     font-size: 38px;
+    user-select: none;
 }
 
 .footer {
@@ -1033,8 +1095,8 @@ a{
     margin-bottom: 5px;
     color: var(--cream-dark);
     font-size: 13px;
+    user-select: none;
 }
-
 
 /*TABLET */
 @media (min-width: 768px) {
@@ -1061,9 +1123,7 @@ a{
         padding-right: 40px;
     }
 
-
     /* ORIGIN */
-
     .origin-layout {
         display: grid;
         grid-template-columns: 1.1fr 0.9fr;
@@ -1085,9 +1145,7 @@ a{
         font-size: 45px;
     }
 
-
     /* HISTORY */
-
     .history-content {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -1099,9 +1157,7 @@ a{
         height: 580px;
     }
 
-
     /* INFOGRAFIS */
-
     #fr1, #fr2, .info-block {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -1133,9 +1189,7 @@ a{
         height: 400px;
     }
 
-
     /* PROCESS */
-
     .process {
         display: flex;
         flex-direction: row;
@@ -1153,9 +1207,7 @@ a{
         margin: 0;
     }
 
-
     /* RECIPE */
-
     .recipe-heading {
         display: grid;
         grid-template-columns: 1fr 0.7fr;
@@ -1180,9 +1232,7 @@ a{
         height: 460px;
     }
 
-
     /* CULTURE */
-
     .culture-grid {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -1193,14 +1243,34 @@ a{
 
 
     /* FOOTER */
-
     .footer {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 40px;
     }
-}
 
+    /* toko */
+    #storetitle h1 {
+        font-size: 70px;
+    }
+
+    #listrendang {
+        padding: 85px 40px 120px;
+    }
+
+    #containerrendang {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px;
+    }
+
+    .product-card .img-responsive {
+        height: 280px;
+    }
+
+    .product-card > p {
+        font-size: 28px;
+    }    
+}
 
 /* DESKTOP */
 @media (min-width: 1024px) {
@@ -1211,6 +1281,15 @@ a{
         padding: 40px 50px 120px;
     }
 
+    #storetitle h1 {
+        font-size: 88px;
+        letter-spacing: 4px;
+    }
+
+    #listrendang {
+        padding: 100px 7% 140px;
+    }
+    
     #intro h1 {
         font-size: 94px;
         letter-spacing: 5px;
@@ -1224,14 +1303,66 @@ a{
         gap: 38px;
     }
 
-    #navigation nav a {
-        font-size: 11px;
+    #navigation.fixed-nav {
+        position: static;
+        animation: none;
+        background-color: transparent;
+        padding: 0;
+        box-shadow: none;
     }
+
+    #navigation nav a {
+        padding: 0 0 4px 0;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid transparent;
+        border-radius: 0;
+        color: var(--brown);
+        font-size: 11px;
+        margin: 0 10px;
+        user-select: none;
+    }
+
+    #navigation nav a:hover {
+        background-color: transparent;
+        color: var(--red);
+        border-bottom-color: var(--red);
+    }
+
+    #navigation nav a.active {
+        background-color: transparent !important;
+        color: var(--red) !important;
+        border-color: transparent !important;
+        border-bottom-color: var(--red) !important;
+        border-radius: 0 !important;
+    }   
 
     #hero-image {
         height: 76vh;
         min-height: 590px;
         border-radius: 18px;
+    }
+
+   #containerrendang {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+
+    .product-card {
+        padding: 20px 20px 25px;
+    }
+
+    .product-card .img-responsive {
+        height: 270px;
+    }
+
+    .product-card > p {
+        font-size: 28px;
+        user-select: none;
+    }
+
+    .btn-detail {
+        padding: 11px 19px;
     }
 
     .hero-text {
@@ -1243,7 +1374,6 @@ a{
         font-size: 38px;
     }
 
-
     .editorial-section, #process-section, #recipe-section, #culture-section, #types-section, #character-section, #closing-section {
         padding-top: 125px;
         padding-bottom: 125px;
@@ -1251,14 +1381,12 @@ a{
         padding-right: 7%;
     }
 
-
     .section-heading h1,.section-heading h2 {
         font-size: 66px;
+        user-select: none;
     }
 
-
     /* ORIGIN */
-
     .origin-layout {
         max-width: 1200px;
         grid-template-columns: 1.15fr 0.85fr;
@@ -1285,25 +1413,28 @@ a{
 
     .origin-title h3 {
         font-size: 48px;
+        user-select: none;
     }
 
     .origin-text .lead {
         font-size: 23px;
+        user-select: none;
     }
 
     .origin-text > p:not(.lead) {
         font-size: 15px;
+        user-select: none;
     }
 
-
     /* HISTORY */
-
     #contfr {
         max-width: 1200px;
+        user-select: none;
     }
 
     #history > h1 {
         font-size: 62px;
+        user-select: none;
     }
 
     .history-img {
@@ -1312,15 +1443,15 @@ a{
 
     .history-text .lead {
         font-size: 23px;
+        user-select: none;
     }
 
     .history-text > p:not(.lead) {
         font-size: 15px;
+        user-select: none;
     }
 
-
     /* INFOGRAFIS */
-
     #fr1,#fr2,.info-block {
         max-width: 1200px;
         gap: 80px;
@@ -1340,40 +1471,42 @@ a{
 
     .fact-text h2, .info-text h2 {
         font-size: 38px;
+        user-select: none;
     }
 
     .fact-text p, .info-text p {
         font-size: 15px;
+        user-select: none;
     }
 
-
     /* PROCESS */
-
     .process-heading {
         max-width: 850px;
     }
 
     .process-heading h1 {
         font-size: 62px;
+        user-select: none;
     }
 
     .process-item h2 {
         font-size: 35px;
+        user-select: none;
     }
 
-
     /* Resep */
-
     #recipe {
         max-width: 1200px;
     }
 
     .recipe-heading h1 {
         font-size: 66px;
+        user-select: none;
     }
 
     .recipe-heading h2 {
         font-size: 42px;
+        user-select: none;
     }
 
     .ingredient-area {
@@ -1424,31 +1557,30 @@ a{
 
     .ingredient-center strong {
         font-size: 38px;
+        user-select: none;
     }
 
     .recipe-image {
         height: 560px;
+        user-select: none;
     }
-
 
     /* CULTURE */
-
     .quote-box p {
         font-size: 34px;
+        user-select: none;
     }
-
 
     /* CHARACTER */
-
     .character-heading h1 {
         font-size: 65px;
+        user-select: none;
     }
 
-
     /* TYPES */
-
     #jendang > h1 {
         font-size: 62px;
+        user-select: none;
     }
 
     #renlistcont {
@@ -1461,319 +1593,414 @@ a{
         min-height: 125px;
     }
 
-
     /* CLOSING */
-
     .closing-text h1 {
         font-size: 75px;
+        user-select: none;
     }
 
-
     /* FOOTER */
-
     #contact {
         padding: 65px 7%;
     }
 
     #contact h2 {
         font-size: 45px;
+        user-select: none;
+    }
+
+    /* CART NOTIFICATION */
+.cart-notification {
+        position: absolute !important; 
+        bottom: auto !important;
+        transform: translateY(-50%) !important;
+        margin: 0 !important;
+        width: fit-content;
+        height: fit-content;
+        max-height: 45px;
+        white-space: nowrap;
+        padding: 8px 14px;
+        background-color: var(--white);
+        backdrop-filter: none;
+        border: 1.5px solid var(--green);
+        border-radius: 6px;
+        overflow: visible;     
+        animation: fadeInDesktop 0.3s ease forwards;
+    }
+
+    /* Panah segitiga di sebelah kiri notifikasi */
+    .cart-notification::before {
+        content: "";
+        position: absolute;
+        left: -7px;
+        top: 50%;
+        width: 12px;
+        height: 12px;
+        background-color: var(--white); 
+        border-left: 1.5px solid var(--green);
+        border-bottom: 1.5px solid var(--green);
+        transform: translateY(-50%) rotate(45deg);
+        z-index: 10; 
+    }
+
+    /* Animasi (Desktop) */
+    @keyframes slideRightNotif {
+        to { transform: translateY(-50%) translateX(0); opacity: 1; pointer-events: auto; }
+    }
+    
+    @keyframes fadeInDesktop {
+        from { opacity: 0; margin-left: -15px; }
+        to { opacity: 1; margin-left: 0; pointer-events: auto; }
+    }
+
+    @keyframes fadeOutNotifDesktop {
+        to { transform: translateY(-50%) translateX(-10px); opacity: 0; }
+    }
+
+    @keyframes slideRightNotif {
+        to { transform: translateY(-50%) translateX(0); opacity: 1; pointer-events: auto; }
+    }
+    @keyframes fadeOutNotif {
+        to { transform: translateY(-50%) translateX(-10px); opacity: 0; }
     }
 }
 
-/* ============================= */
 /* RENDANG STORE */
-/* ============================= */
-
 #header-hero {
-display: flex;
-flex-direction: column;
-align-items: center;
-width: 100%;
-padding: 55px 20px 45px;
-background-color: var(--cream);
-text-align: center;
-}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 55px 20px 45px;
+    background-color: var(--cream);
+    text-align: center;
+    }
 
 #storetitle {
-margin-bottom: 25px;
+    margin-bottom: 25px;
 }
 
 #storetitle h1 {
-margin: 0;
-color: var(--brown-dark);
-font-family: 'Playfair Display', serif;
-font-size: 52px;
-line-height: 1;
-letter-spacing: 2px;
+    margin: 0;
+    color: var(--brown-dark);
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    line-height: 1;
+    letter-spacing: 2px;
+    user-select: none;
 }
 
 #storetitle h1::after {
-content: "";
-display: block;
-width: 55px;
-height: 2px;
-margin: 18px auto 0;
-background-color: var(--red);
+    content: "";
+    display: block;
+    width: 55px;
+    height: 2px;
+    margin: 18px auto 0;
+    background-color: var(--red);
 }
 
 #nav nav {
-display: flex;
-justify-content: center;
-align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #nav nav a {
-display: inline-block;
-padding: 10px 20px;
-border: 1px solid var(--brown-light);
-border-radius: 4px;
-color: var(--brown);
-font-size: 11px;
-font-weight: 600;
-letter-spacing: 1.5px;
-text-decoration: none;
-text-transform: uppercase;
-transition: 0.3s ease;
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid var(--brown-light);
+    border-radius: 4px;
+    color: var(--brown);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+    user-select: none;
 }
 
 #nav nav a:hover {
-background-color: var(--brown-dark);
-border-color: var(--brown-dark);
-color: var(--cream);
+    background-color: var(--brown-dark);
+    border-color: var(--brown-dark);
+    color: var(--cream);
 }
 
-/* ============================= */
 /* PRODUCT SECTION */
-/* ============================= */
-
 #listrendang {
-width: 100%;
-padding: 75px 20px 110px;
-background-color: var(--cream-light);
+    width: 100%;
+    padding: 75px 20px 110px;
+    background-color: var(--cream-light);
 }
 
 #containerrendang {
-display: grid;
-grid-template-columns: 1fr;
-gap: 25px;
-width: 100%;
-max-width: 1150px;
-margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    width: 100%;
+    max-width: 1150px;
+    margin: 0 auto;
 }
 
-/* ============================= */
 /* PRODUCT CARD */
-/* ============================= */
-
 .product-card {
-position: relative;
-overflow: hidden;
-padding: 18px 18px 22px;
-background-color: var(--white);
-border-radius: 10px;
-border: 1px solid var(--cream-dark);
-box-shadow: 0 8px 25px rgba(53, 23, 13, 0.07);
-transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    padding: 18px 18px 22px;
+    background-color: var(--white);
+    border-radius: 10px;
+    border: 1px solid var(--cream-dark);
+    box-shadow: 0 8px 25px rgba(53, 23, 13, 0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .product-card:hover {
-transform: translateY(-7px);
-box-shadow: 0 15px 35px rgba(53, 23, 13, 0.14);
+    transform: translateY(-7px);
+    box-shadow: 0 15px 35px rgba(53, 23, 13, 0.14);
 }
 
-/* ============================= */
 /* PRODUCT IMAGE */
-/* ============================= */
-
 .product-card .img-responsive {
-width: 100%;
-height: 250px;
-margin-bottom: 18px;
-object-fit: cover;
-border-radius: 7px;
-background-color: var(--cream-dark);
+    width: 100%;
+    height: 250px;
+    margin-bottom: 18px;
+    object-fit: cover;
+    border-radius: 7px;
+    background-color: var(--cream-dark);
 }
 
-/* ============================= */
 /* PRODUCT NAME */
-/* ============================= */
-
 .product-card > p {
-margin-bottom: 15px;
-color: var(--brown-dark);
-font-family: 'Playfair Display', serif;
-font-size: 25px;
-font-weight: 700;
-line-height: 1.1;
+    margin-bottom: 15px;
+    color: var(--brown-dark);
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1.1;
 }
 
-/* ============================= */
 /* BUTTON */
-/* ============================= */
-
 .btn-detail {
-padding: 10px 17px;
-border: 1px solid var(--brown);
-border-radius: 4px;
-background-color: transparent;
-color: var(--brown);
-font-family: 'Poppins', sans-serif;
-font-size: 10px;
-font-weight: 600;
-letter-spacing: 1px;
-text-transform: uppercase;
-cursor: pointer;
-transition: all 0.3s ease;
+    padding: 10px 17px;
+    border: 1px solid var(--brown);
+    border-radius: 4px;
+    background-color: transparent;
+    color: var(--brown);
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .btn-detail:hover {
-background-color: var(--brown-dark);
-border-color: var(--brown-dark);
-color: var(--cream);
+    background-color: var(--brown-dark);
+    border-color: var(--brown-dark);
+    color: var(--cream);
 }
 
-/* ============================= */
-/* PRODUCT INFORMATION */
-/* ============================= */
+.btn-add {
+    display: inline-block;
+    padding: 10px 18px;
+    background-color: var(--green);
+    color: var(--cream);
+    border: 1px solid var(--green);
+    border-radius: 4px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
 
+.btn-add:hover {
+    background-color: var(--green-dark);
+    border-color: var(--green-dark);
+    color: var(--white);
+    box-shadow: 0 5px 15px rgba(47, 81, 56, 0.15); 
+    transform: translateY(-2px);
+}
+
+.btn-add:active {
+    transform: translateY(0) scale(0.96);
+    box-shadow: 0 2px 5px rgba(47, 81, 56, 0.15);
+    transition: all 0.1s ease;
+}
+
+
+/* CART NOTIFICATION */
+.cart-notification {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(50px);
+    width: 90%;
+    max-width: 350px;
+    background-color: rgba(255, 255, 255, 0.85); 
+    backdrop-filter: blur(8px);                  
+    color: var(--brown-dark);
+    border-left: 5px solid var(--green); 
+    padding: 12px 16px;
+    border-radius: 6px;
+    box-shadow: 0 10px 25px rgba(53, 23, 13, 0.1); 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9999;
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    opacity: 0;
+    pointer-events: none;
+    animation: slideUpNotif 0.3s ease forwards;
+}
+
+.notif-close {
+    background: transparent;
+    border: none;
+    color: var(--brown-light); 
+    font-size: 18px;
+    cursor: pointer;
+    padding: 0 0 0 15px;
+    line-height: 1;
+    pointer-events: auto;
+    transition: color 0.2s ease;
+}
+
+.notif-close:hover {
+    color: var(--red); 
+}
+
+/* PRODUCT INFORMATION */
 .info-rendang {
-margin-top: 18px;
-padding-top: 16px;
-border-top: 1px solid var(--cream-dark);
-animation: showInfo 0.3s ease;
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid var(--cream-dark);
+    animation: showInfo 0.3s ease;
 }
 
 .harga-text {
-display: block;
-margin-bottom: 7px;
-color: var(--red);
-font-family: 'Playfair Display', serif;
-font-size: 21px;
+    display: block;
+    margin-bottom: 7px;
+    color: var(--red);
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
 }
 
 .deskripsi-text {
-margin: 0;
-color: var(--brown-light);
-font-size: 12px;
-line-height: 1.7;
+    margin: 0;
+    color: var(--brown-light);
+    font-size: 12px;
+    line-height: 1.7;
 }
 
-/* ============================= */
 /* DECORATION */
-/* ============================= */
-
 #listrendang::before {
-content: "OUR COLLECTION";
-display: block;
-max-width: 1150px;
-margin: 0 auto 35px;
-color: var(--red);
-font-size: 10px;
-font-weight: 600;
-letter-spacing: 3px;
-text-align: center;
+    content: "OUR COLLECTION";
+    display: block;
+    max-width: 1150px;
+    margin: 0 auto 35px;
+    color: var(--red);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-align: center;
 }
 
-/* ============================= */
 /* ANIMATION */
-/* ============================= */
-
 @keyframes showInfo {
-from {
-opacity: 0;
-transform: translateY(-5px);
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
+@keyframes slideDown {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+}
 
-to {
+@keyframes slideUpNotif {
+    to { transform: translateX(-50%) translateY(0); opacity: 1; pointer-events: auto; }
+}
+
+.cart-notification.fade-out {
+    animation: fadeOutNotif 0.3s ease forwards;
+}
+
+@keyframes fadeOutNotif {
+    to { transform: translateX(-50%) translateY(20px); opacity: 0; }
+}
+
+.fade-scroll {
+    opacity: 0;
+    transform: translateY(40px); /* Efek elemen meluncur naik dari bawah */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform;
+}
+
+.fade-scroll.is-visible {
     opacity: 1;
     transform: translateY(0);
 }
 
-
+.ingredient-cabai {
+    animation: floatCabai 6s ease-in-out infinite;
+    top: 20px !important;
+    left: 4% !important;
 }
 
-/* ============================= */
-/* TABLET */
-/* ============================= */
-
-@media (min-width: 768px) {
-
-
-#header-hero {
-    padding: 70px 40px 55px;
+.ingredient-jahe {
+    animation: floatJahe 7s ease-in-out infinite;
 }
 
-#storetitle h1 {
-    font-size: 70px;
+.ingredient-lengkuas {
+    animation: floatLengkuas 8s ease-in-out infinite;
 }
 
-#listrendang {
-    padding: 85px 40px 120px;
+.ingredient-santan {
+    animation: floatSantan 6.5s ease-in-out infinite;
 }
 
-#containerrendang {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 28px;
+.ingredient-daun {
+    width: 95px !important;
+    height: 95px !important;
+    top: 340px !important;
+    left: 75% !important;
+    transform: translateX(-100%);
+    animation: floatDaun 7.5s ease-in-out infinite;
 }
 
-.product-card .img-responsive {
-    height: 280px;
+@keyframes floatCabai {
+    0%, 100% { transform: translate(0, 0); }
+    50%      { transform: translate(-12px, -18px); }
 }
 
-.product-card > p {
-    font-size: 28px;
+@keyframes floatJahe {
+    0%, 100% { transform: translate(0, 0); }
+    50%      { transform: translate(15px, -15px); }
 }
 
-
+@keyframes floatLengkuas {
+    0%, 100% { transform: translate(0, 0); }
+    50%      { transform: translate(-10px, 15px); }
 }
 
-/* ============================= */
-/* DESKTOP */
-/* ============================= */
-
-@media (min-width: 1024px) {
-
-
-#header-hero {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 85px 50px 65px;
+@keyframes floatSantan {
+    0%, 100% { transform: translate(0, 0); }
+    50%      { transform: translate(14px, 12px); }
 }
 
-#storetitle h1 {
-    font-size: 88px;
-    letter-spacing: 4px;
+@keyframes floatDaun {
+    0%, 100% { transform: translate(0, 0); }
+    50%      { transform: translate(-12px, -16px); }
 }
-
-#nav nav a {
-    font-size: 11px;
-}
-
-#listrendang {
-    padding: 100px 7% 140px;
-}
-
-#containerrendang {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-}
-
-.product-card {
-    padding: 20px 20px 25px;
-}
-
-.product-card .img-responsive {
-    height: 270px;
-}
-
-.product-card > p {
-    font-size: 28px;
-}
-
-.btn-detail {
-    padding: 11px 19px;
-}
-}
-
-
