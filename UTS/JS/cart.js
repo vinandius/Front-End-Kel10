@@ -4,28 +4,37 @@
 
 function cartKey() {
   const user = getCurrentUser();
+  if (!getCurrentUser()) {
+    tampilkanPeringatanLogin();
+    
+  }
   return user ? "cart_" + user.email : null;
 }
 
 function getCart() {
-  const key = cartKey();
-  return key ? (JSON.parse(localStorage.getItem(key)) || []) : [];
+  return JSON.parse(localStorage.getItem(cartKey())) || [];
 }
 
 function saveCart(cart) {
-  const key = cartKey();
-  if (key) localStorage.setItem(key, JSON.stringify(cart));
+  localStorage.setItem(cartKey(), JSON.stringify(cart));
 }
 
 function addToCart(id) {
-  if (!getCurrentUser()) {
-    tampilkanPeringatanLogin();
-    return false;
-  }
   const cart = getCart();
   const item = cart.find(i => i.id === id);
   if (item) item.qty++;
   else cart.push({ id, qty: 1 });
   saveCart(cart);
-  return true;
+}
+
+function removeFromCart(id) {
+  saveCart(getCart().filter(i => i.id !== id));
+}
+
+function getCartTotal() {
+  const products = getProducts();
+  return getCart().reduce((sum, i) => {
+    const p = products.find(p => p.id === i.id);
+    return sum + (p ? p.price * i.qty : 0);
+  }, 0);
 }
