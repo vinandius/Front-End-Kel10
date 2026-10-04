@@ -4,10 +4,10 @@
 
 function cartKey() {
   const user = getCurrentUser();
-  if (!getCurrentUser()) {
-    tampilkanPeringatanLogin();
+  // if (!getCurrentUser()) {
+  //   tampilkanPeringatanLogin();
     
-  }
+  // }
   return user ? "cart_" + user.email : null;
 }
 
